@@ -38,10 +38,14 @@ class SignUpVC: UIViewController,
     let toolBar = UIToolbar()
     toolBar.barStyle = UIBarStyle.default
     toolBar.isTranslucent = true
-    //          toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+    // toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
     toolBar.sizeToFit()
     
-    let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: #selector(donePicker))
+    let doneButton = UIBarButtonItem(title: "Done",
+                                     style: UIBarButtonItem.Style.plain,
+                                     target: self,
+                                     action: #selector(donePicker))
+    
     toolBar.setItems([doneButton], animated: false)
     toolBar.isUserInteractionEnabled = true
     
@@ -55,7 +59,6 @@ class SignUpVC: UIViewController,
     accountType.text = pickerData[currentIndex]
     accountType.resignFirstResponder()
   }
-  
   
   // Number of columns of data
   func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -79,7 +82,7 @@ class SignUpVC: UIViewController,
     
   }
   
-  //
+  // Verify Data Entry And Show a Message to The User
   @IBAction func signUpTapped(_ sender: Any) {
     
     if email.text?
@@ -95,6 +98,7 @@ class SignUpVC: UIViewController,
         phoneNumber.text?
         .trimmingCharacters(in: .whitespacesAndNewlines) == ""
     {
+      
       let alert = UIAlertController(title: "Ops!",
                                     message: "Please Fill all the fileds",
                                     preferredStyle: .alert)
@@ -105,6 +109,40 @@ class SignUpVC: UIViewController,
       
       alert.addAction(action)
       present(alert, animated: true, completion: nil)
+    } else {
+      
+      Auth.auth().createUser(withEmail: email.text!, password: password.text!) { result, error in
+        
+        if error != nil {
+          print("error createUser: \(String(describing: error?.localizedDescription))")
+        } else {
+          
+          let db = Firestore.firestore()
+          
+          db.collection("users").document((result?.user.uid)!).setData (["firstName":self.firstName.text!,"lastName":self.lastName.text!,"accountType":self.accountType.text!,"phoneNumber":self.phoneNumber.text!,])
+          { error in
+            if error != nil {
+              
+              print("error add User to database: \(String(describing: error?.localizedDescription))")
+            }
+            else {
+              
+              // Specify the account type to show the interface for data entry
+              let Storyboard = UIStoryboard(name: "Main", bundle: nil)
+              var vc:UIViewController!
+              if self.accountType.text! == "User"{
+                vc = Storyboard.instantiateViewController(identifier: "mainUser")
+              } else if self.accountType.text! == "Add a Shop" {
+                vc = Storyboard.instantiateViewController(identifier: "mainShop")
+              } else {
+                vc = Storyboard.instantiateViewController(identifier: "mainProfessional")
+              }
+              vc.modalPresentationStyle = .overFullScreen
+              self.present(vc , animated: true)
+            }
+          }
+        }
+      }
     }
   }
   
@@ -115,9 +153,5 @@ class SignUpVC: UIViewController,
     vc.modalPresentationStyle = .overFullScreen
     present(vc , animated: true)
   }
-  
-//  func signIn(){
-//
-//  }
   
 }

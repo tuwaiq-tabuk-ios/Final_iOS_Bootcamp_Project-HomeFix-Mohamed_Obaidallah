@@ -10,6 +10,8 @@
 		2710D5132770619500797ED9 /* ShowShopCollViCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710D5122770619500797ED9 /* ShowShopCollViCell.swift */; };
 		273098A52767715B00ABE3F0 /* CollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273098A42767715B00ABE3F0 /* CollectionReusableView.swift */; };
 		273CA188276F112C00758AA4 /* ShopViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273CA187276F112C00758AA4 /* ShopViewCell.swift */; };
+		275B1A7A277886DD0031F523 /* AddShopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B1A79277886DD0031F523 /* AddShopVC.swift */; };
+		275B1A7C2778A72E0031F523 /* AddProfessionalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B1A7B2778A72E0031F523 /* AddProfessionalVC.swift */; };
 		2777747127744C6C00356B3A /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2777747027744C6C00356B3A /* MainVC.swift */; };
 		2777747327744CB100356B3A /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2777747227744CB100356B3A /* SignUpVC.swift */; };
 		27777475277460B400356B3A /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27777474277460B400356B3A /* LogInVC.swift */; };
@@ -35,6 +37,8 @@
 		2710D5122770619500797ED9 /* ShowShopCollViCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowShopCollViCell.swift; sourceTree = "<group>"; };
 		273098A42767715B00ABE3F0 /* CollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionReusableView.swift; sourceTree = "<group>"; };
 		273CA187276F112C00758AA4 /* ShopViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewCell.swift; sourceTree = "<group>"; };
+		275B1A79277886DD0031F523 /* AddShopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShopVC.swift; sourceTree = "<group>"; };
+		275B1A7B2778A72E0031F523 /* AddProfessionalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfessionalVC.swift; sourceTree = "<group>"; };
 		2777747027744C6C00356B3A /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		2777747227744CB100356B3A /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		27777474277460B400356B3A /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 				273098A42767715B00ABE3F0 /* CollectionReusableView.swift */,
 				273CA187276F112C00758AA4 /* ShopViewCell.swift */,
 				2710D5122770619500797ED9 /* ShowShopCollViCell.swift */,
+				275B1A79277886DD0031F523 /* AddShopVC.swift */,
+				275B1A7B2778A72E0031F523 /* AddProfessionalVC.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -232,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27E06782276F5D9C007490BB /* ShowShopsVC.swift in Sources */,
+				275B1A7A277886DD0031F523 /* AddShopVC.swift in Sources */,
 				27E54608276B75BD0062B45A /* Sections.swift in Sources */,
 				27777475277460B400356B3A /* LogInVC.swift in Sources */,
 				278209172766205100F493FE /* HomeViewController.swift in Sources */,
@@ -239,6 +246,7 @@
 				2777747327744CB100356B3A /* SignUpVC.swift in Sources */,
 				2777747127744C6C00356B3A /* MainVC.swift in Sources */,
 				27E54606276B747F0062B45A /* SectionsControl.swift in Sources */,
+				275B1A7C2778A72E0031F523 /* AddProfessionalVC.swift in Sources */,
 				2710D5132770619500797ED9 /* ShowShopCollViCell.swift in Sources */,
 				277774782774896000356B3A /* DismissKyboard.swift in Sources */,
 				273098A52767715B00ABE3F0 /* CollectionReusableView.swift in Sources */,

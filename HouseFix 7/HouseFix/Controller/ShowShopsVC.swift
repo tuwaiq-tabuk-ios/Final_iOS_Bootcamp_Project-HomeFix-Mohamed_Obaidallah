@@ -31,6 +31,7 @@ class ShowShopsVC: UIViewController,
     startTimer()
   }
   
+  
   override func viewWillAppear(_ animated: Bool) {
 //    nameShop.text = showShops.name
     shopAddresses.text = showShops.address
@@ -42,7 +43,7 @@ class ShowShopsVC: UIViewController,
     let annotation = MKPointAnnotation()
     annotation.coordinate = coords
     mapView.addAnnotation(annotation)
-    
+  
     mapView.mapType = .standard
     
   }
@@ -89,5 +90,4 @@ class ShowShopsVC: UIViewController,
                   height: collectionView.frame.height )
   }
  
-  
 }

@@ -12,7 +12,7 @@
         <!--Navigation Controller-->
         <scene sceneID="UGH-oL-U5B">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kPr-tb-WXx" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="mainUser" automaticallyAdjustsScrollViewInsets="NO" id="kPr-tb-WXx" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ifw-fE-gwQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -276,18 +276,18 @@
             </objects>
             <point key="canvasLocation" x="521.73913043478262" y="956.91964285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--Add ShopVC-->
         <scene sceneID="C8Y-Q5-Nd2">
             <objects>
-                <viewController id="jfy-KR-Dnw" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2P5-Wf-Saa">
+                <viewController storyboardIdentifier="mainShop" id="jfy-KR-Dnw" customClass="AddShopVC" customModule="HouseFix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2P5-Wf-Saa" userLabel="Root_View">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add shops and professionals page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRn-Tg-inM">
-                                <rect key="frame" x="57" y="111" width="301" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show requirements for me Add stores" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lN3-JO-Nph">
+                                <rect key="frame" x="30" y="130" width="355" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -298,7 +298,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="exb-3n-o1f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1669" y="960"/>
+            <point key="canvasLocation" x="1469.5652173913045" y="956.91964285714278"/>
+        </scene>
+        <!--Add ProfessionalVC-->
+        <scene sceneID="ae6-tK-Q01">
+            <objects>
+                <viewController storyboardIdentifier="mainProfessional" id="Ysx-sd-RKT" customClass="AddProfessionalVC" customModule="HouseFix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZWu-jm-lSM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show requirements Add professional" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vul-Ug-Jpv">
+                                <rect key="frame" x="20" y="129" width="374" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pQb-5o-pQd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yax-Fr-uM8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1469.5652173913045" y="1737.7232142857142"/>
         </scene>
         <!--Home-->
         <scene sceneID="Cub-XU-kN9">
@@ -738,10 +762,10 @@
             </objects>
             <point key="canvasLocation" x="963.76811594202911" y="87.723214285714278"/>
         </scene>
-        <!--House_Fix2-->
+        <!--ShowShop-->
         <scene sceneID="AgN-et-e1c">
             <objects>
-                <viewController id="LcS-tM-XIE" userLabel="House_Fix2" customClass="ShowShopsVC" customModule="HouseFix" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LcS-tM-XIE" userLabel="ShowShop" customClass="ShowShopsVC" customModule="HouseFix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zn6-p5-LDB" userLabel="Root_View">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
