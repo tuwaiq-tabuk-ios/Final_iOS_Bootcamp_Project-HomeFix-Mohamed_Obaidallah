@@ -13,14 +13,16 @@ class LogInVC: UIViewController {
   
   @IBOutlet weak var email: UITextField!
   @IBOutlet weak var passwoed: UITextField!
+  @IBOutlet weak var loginButton: UIButton!
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
     email.text = "mohammed@gmail.com"
     passwoed.text = "12345678"
-    self.hideKeyboardWhenTappedAround()
     
+    self.hideKeyboardWhenTappedAround()
+    setUpElements()
   }
   
   // Verify Data Entry And Show a Message to The User
@@ -53,7 +55,7 @@ class LogInVC: UIViewController {
     present(vc , animated: true)
   }
   
-  //
+  // 
   func logIn() {
     Auth.auth().signIn(withEmail: email.text!, password: passwoed.text!) { authResult, err in
       if let error = err {
@@ -95,6 +97,12 @@ class LogInVC: UIViewController {
         }
       }
     }
+  }
+  
+  func setUpElements(){
+    Utilities.styleTextField(email)
+    Utilities.styleTextField(passwoed)
+    Utilities.styleFilledButton(loginButton)
   }
   
 }

@@ -12,22 +12,93 @@ class AddShopVC: UIViewController,
                  UINavigationControllerDelegate,
                  UICollectionViewDelegate,
                  UICollectionViewDataSource,
-                 PHPickerViewControllerDelegate {
+                 PHPickerViewControllerDelegate,
+                 UIPickerViewDelegate,
+                 UIPickerViewDataSource,
+                 UITextFieldDelegate {
   
   @IBOutlet weak var shopNameTextField: UITextField!
   @IBOutlet weak var imagePhotoShop: UIImageView!
   @IBOutlet weak var collectionVI: UICollectionView!
+  @IBOutlet weak var descriptionTextField: UITextField!
+  @IBOutlet weak var phoneNumberTextField: UITextField!
+  @IBOutlet weak var locationLinktextField: UITextField!
+  @IBOutlet weak var typeShopTextField: UITextField!
+  @IBOutlet weak var cityTextField: UITextField!
+  @IBOutlet weak var submitButton: UIButton!
+  
   
   var arryPhoto = [UIImage]()
-  
+  let sectionTypeArry = ["Electrical","Plumber","Dyeing","Building"]
+  let arryCitys = ["Tabuk","Riyadh","Jeddah","Dammam"]
+  var pickerSection = UIPickerView()
+  var currentIndex = 0
+  var pickerCitys = UIPickerView()
+  var toolBarSection:UIToolbar!
+  var toolBarCitys:UIToolbar!
+
   override func viewDidLoad() {
     super.viewDidLoad()
     hideKeyboardWhenTappedAround()
+    setUpElements()
+    
     collectionVI.delegate = self
     collectionVI.dataSource = self
+    pickerSection.dataSource = self
+    pickerSection.delegate = self
+    pickerCitys.dataSource = self
+    pickerCitys.delegate = self
+    typeShopTextField.delegate = self
     
+    toolBarSection = UIToolbar()
+    toolBarSection.barStyle = UIBarStyle.default
+    toolBarSection.isTranslucent = true
+    toolBarSection.sizeToFit()
+    
+    let doneButton = UIBarButtonItem(title: "Done",
+                                     style: UIBarButtonItem.Style.plain,
+                                     target: self,
+                                     action: #selector(donePickerSection))
+    
+    toolBarSection.setItems([doneButton], animated: false)
+    toolBarSection.isUserInteractionEnabled = true
+    
+    toolBarCitys = UIToolbar()
+    toolBarCitys.barStyle = UIBarStyle.default
+    toolBarCitys.isTranslucent = true
+    toolBarCitys.sizeToFit()
+    
+    let doneButton2 = UIBarButtonItem(title: "Done",
+                                     style: UIBarButtonItem.Style.plain,
+                                     target: self,
+                                     action: #selector(donePickerCitys))
+    
+    toolBarCitys.setItems([doneButton2], animated: false)
+    toolBarCitys.isUserInteractionEnabled = true
+    
+    
+    typeShopTextField.inputView = pickerSection
+    typeShopTextField.inputAccessoryView = toolBarSection
+    cityTextField.inputView = pickerCitys
+    cityTextField.inputAccessoryView = toolBarCitys
   }
   
+  
+  @objc func donePickerSection() {
+    typeShopTextField.text = sectionTypeArry[currentIndex]
+    typeShopTextField.resignFirstResponder()
+  }
+  
+  
+  @objc func donePickerCitys() {
+      cityTextField.text = arryCitys[currentIndex]
+      cityTextField.resignFirstResponder()
+  }
+  
+  
+  @IBAction func submitBut(_ sender: UIButton) {
+    
+  }
   
   @IBAction func takePhoto(_ sender: Any) {
     showPhotoAlert()
@@ -102,12 +173,6 @@ class AddShopVC: UIViewController,
   }
   
   
-//  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//    return CGSize(width: collectionView.frame.width * 0.44,
-//                  height: collectionView.frame.height * 0.44)
-//  }
-  
-  
   func getPhotos(){
     var config = PHPickerConfiguration()
     config.filter = .images
@@ -140,4 +205,49 @@ class AddShopVC: UIViewController,
     }
   }
   
+  //
+  func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    return 1
+  }
+  
+  func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    
+    if (pickerView == pickerSection){
+      return sectionTypeArry.count
+      
+    }else {
+      return arryCitys.count
+    }
+    
+  }
+  
+  func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?{
+    if (pickerView == pickerSection){
+      return sectionTypeArry[row]
+    }else{
+      return arryCitys[row]
+    }
+  }
+  
+  
+  func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    currentIndex = row
+    if (pickerView == pickerSection){
+    typeShopTextField.text = sectionTypeArry[row]
+    }else{
+      cityTextField.text = arryCitys[row]
+    }
+  }
+  
+  func setUpElements(){
+    
+    Utilities.styleTextField(shopNameTextField)
+    Utilities.styleTextField(descriptionTextField)
+    Utilities.styleTextField(phoneNumberTextField)
+    Utilities.styleTextField(locationLinktextField)
+    Utilities.styleTextField(typeShopTextField)
+    Utilities.styleTextField(cityTextField)
+    Utilities.styleFilledButton(submitButton)
+    
+  }
 }

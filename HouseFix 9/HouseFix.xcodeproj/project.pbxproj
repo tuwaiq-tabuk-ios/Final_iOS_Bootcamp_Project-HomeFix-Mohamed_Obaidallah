@@ -22,6 +22,7 @@
 		2782091A2766205100F493FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 278209182766205100F493FE /* Main.storyboard */; };
 		2782091C2766205200F493FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2782091B2766205200F493FE /* Assets.xcassets */; };
 		2782091F2766205200F493FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2782091D2766205200F493FE /* LaunchScreen.storyboard */; };
+		27A0ECC3277B1F6C000BE3E8 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A0ECC2277B1F6C000BE3E8 /* Utilities.swift */; };
 		27D473F12774A28200CCBF73 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27D473F02774A28200CCBF73 /* GoogleService-Info.plist */; };
 		27E06782276F5D9C007490BB /* ShowShopsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E06781276F5D9C007490BB /* ShowShopsVC.swift */; };
 		27E54606276B747F0062B45A /* SectionsControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E54605276B747F0062B45A /* SectionsControl.swift */; };
@@ -52,6 +53,7 @@
 		2782091B2766205200F493FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2782091E2766205200F493FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		278209202766205200F493FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27A0ECC2277B1F6C000BE3E8 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		27D473F02774A28200CCBF73 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		27E06781276F5D9C007490BB /* ShowShopsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowShopsVC.swift; sourceTree = "<group>"; };
 		27E54605276B747F0062B45A /* SectionsControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsControl.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				277774772774896000356B3A /* DismissKyboard.swift */,
+				27A0ECC2277B1F6C000BE3E8 /* Utilities.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				27777475277460B400356B3A /* LogInVC.swift in Sources */,
 				27FBDE5B2779D776002A0431 /* PhotoShopViewCell.swift in Sources */,
 				278209172766205100F493FE /* HomeViewController.swift in Sources */,
+				27A0ECC3277B1F6C000BE3E8 /* Utilities.swift in Sources */,
 				273CA188276F112C00758AA4 /* ShopViewCell.swift in Sources */,
 				2777747327744CB100356B3A /* SignUpVC.swift in Sources */,
 				2777747127744C6C00356B3A /* MainVC.swift in Sources */,

@@ -11,7 +11,8 @@ import Firebase
 
 class SignUpVC: UIViewController,
                 UIPickerViewDelegate,
-                UIPickerViewDataSource,UITextFieldDelegate {
+                UIPickerViewDataSource,
+                UITextFieldDelegate {
   
   
   @IBOutlet weak var accountType: UITextField!
@@ -20,7 +21,7 @@ class SignUpVC: UIViewController,
   @IBOutlet weak var lastName: UITextField!
   @IBOutlet weak var password: UITextField!
   @IBOutlet weak var phoneNumber: UITextField!
-  
+  @IBOutlet weak var signUpButton: UIButton!
   
   let typeArray = ["User","Add a Shop","professional"]
   var pickerView = UIPickerView()
@@ -30,6 +31,7 @@ class SignUpVC: UIViewController,
     super.viewDidLoad()
     
     self.hideKeyboardWhenTappedAround()
+    setUpElements()
     
     pickerView.delegate = self
     pickerView.dataSource = self
@@ -38,7 +40,6 @@ class SignUpVC: UIViewController,
     let toolBar = UIToolbar()
     toolBar.barStyle = UIBarStyle.default
     toolBar.isTranslucent = true
-    // toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
     toolBar.sizeToFit()
     
     let doneButton = UIBarButtonItem(title: "Done",
@@ -148,5 +149,18 @@ class SignUpVC: UIViewController,
     vc.modalPresentationStyle = .overFullScreen
     present(vc , animated: true)
   }
+  
+  func setUpElements(){
+    
+    Utilities.styleTextField(email)
+    Utilities.styleTextField(password)
+    Utilities.styleTextField(phoneNumber)
+    Utilities.styleTextField(accountType)
+    Utilities.styleTextField(firstName)
+    Utilities.styleTextField(lastName)
+    Utilities.styleFilledButton(signUpButton)
+    
+  }
+  
   
 }
