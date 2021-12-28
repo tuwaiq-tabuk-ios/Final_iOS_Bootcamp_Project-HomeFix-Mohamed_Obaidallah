@@ -22,7 +22,7 @@ class SignUpVC: UIViewController,
   @IBOutlet weak var phoneNumber: UITextField!
   
   
-  let pickerData = ["User","Add a Shop","professional"]
+  let typeArray = ["User","Add a Shop","professional"]
   var pickerView = UIPickerView()
   var currentIndex = 0
   
@@ -56,7 +56,7 @@ class SignUpVC: UIViewController,
   
   
   @objc func donePicker() {
-    accountType.text = pickerData[currentIndex]
+    accountType.text = typeArray[currentIndex]
     accountType.resignFirstResponder()
   }
   
@@ -67,18 +67,18 @@ class SignUpVC: UIViewController,
   
   // The number of rows of data
   func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-    return pickerData.count
+    return typeArray.count
   }
   
   // The data to return fopr the row and component (column) that's being passed in
   func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-    return pickerData[row]
+    return typeArray[row]
   }
   
   
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     currentIndex = row
-    accountType.text = pickerData[row]
+    accountType.text = typeArray[row]
     
   }
   
@@ -114,19 +114,14 @@ class SignUpVC: UIViewController,
       Auth.auth().createUser(withEmail: email.text!, password: password.text!) { result, error in
         
         if error != nil {
-          print("error createUser: \(String(describing: error?.localizedDescription))")
+          print("error createUser: \(error?.localizedDescription)")
         } else {
-          
           let db = Firestore.firestore()
           
-          db.collection("users").document((result?.user.uid)!).setData (["firstName":self.firstName.text!,"lastName":self.lastName.text!,"accountType":self.accountType.text!,"phoneNumber":self.phoneNumber.text!,])
-          { error in
+          db.collection("users").document((result?.user.uid)!).setData (["firstName":self.firstName.text!,"lastName":self.lastName.text!,"accountType":self.accountType.text!,"phoneNumber":self.phoneNumber.text!,]) { error in
             if error != nil {
-              
-              print("error add User to database: \(String(describing: error?.localizedDescription))")
-            }
-            else {
-              
+              print("error add User to database: \(error?.localizedDescription)")
+            } else {
               // Specify the account type to show the interface for data entry
               let Storyboard = UIStoryboard(name: "Main", bundle: nil)
               var vc:UIViewController!

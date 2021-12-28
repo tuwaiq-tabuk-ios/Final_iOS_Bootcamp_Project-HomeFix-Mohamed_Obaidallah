@@ -17,7 +17,8 @@ class LogInVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    email.text = "mohammed@gmail.com"
+    passwoed.text = "12345678"
     self.hideKeyboardWhenTappedAround()
     
   }

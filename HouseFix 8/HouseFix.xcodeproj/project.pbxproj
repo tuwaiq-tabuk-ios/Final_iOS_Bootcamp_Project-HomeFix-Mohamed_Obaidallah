@@ -31,6 +31,7 @@
 		27F67AFE27785C4B00D71BF7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 27F67AFD27785C4B00D71BF7 /* FirebaseFirestore */; };
 		27F67B0027785C4B00D71BF7 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 27F67AFF27785C4B00D71BF7 /* FirebaseDatabase */; };
 		27F8817B276A0EDB0086F8C0 /* HomeCellCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8817A276A0EDB0086F8C0 /* HomeCellCollection.swift */; };
+		27FBDE5B2779D776002A0431 /* PhotoShopViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FBDE5A2779D776002A0431 /* PhotoShopViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		27E54605276B747F0062B45A /* SectionsControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsControl.swift; sourceTree = "<group>"; };
 		27E54607276B75BD0062B45A /* Sections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sections.swift; sourceTree = "<group>"; };
 		27F8817A276A0EDB0086F8C0 /* HomeCellCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellCollection.swift; sourceTree = "<group>"; };
+		27FBDE5A2779D776002A0431 /* PhotoShopViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoShopViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		278209282766207400F493FE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				275B1A79277886DD0031F523 /* AddShopVC.swift */,
 				2777747027744C6C00356B3A /* MainVC.swift */,
 				2777747227744CB100356B3A /* SignUpVC.swift */,
 				27777474277460B400356B3A /* LogInVC.swift */,
@@ -151,8 +154,8 @@
 				273098A42767715B00ABE3F0 /* CollectionReusableView.swift */,
 				273CA187276F112C00758AA4 /* ShopViewCell.swift */,
 				2710D5122770619500797ED9 /* ShowShopCollViCell.swift */,
-				275B1A79277886DD0031F523 /* AddShopVC.swift */,
 				275B1A7B2778A72E0031F523 /* AddProfessionalVC.swift */,
+				27FBDE5A2779D776002A0431 /* PhotoShopViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				275B1A7A277886DD0031F523 /* AddShopVC.swift in Sources */,
 				27E54608276B75BD0062B45A /* Sections.swift in Sources */,
 				27777475277460B400356B3A /* LogInVC.swift in Sources */,
+				27FBDE5B2779D776002A0431 /* PhotoShopViewCell.swift in Sources */,
 				278209172766205100F493FE /* HomeViewController.swift in Sources */,
 				273CA188276F112C00758AA4 /* ShopViewCell.swift in Sources */,
 				2777747327744CB100356B3A /* SignUpVC.swift in Sources */,

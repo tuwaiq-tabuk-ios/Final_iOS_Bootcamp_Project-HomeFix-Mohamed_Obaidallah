@@ -284,17 +284,140 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show requirements for me Add stores" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lN3-JO-Nph">
-                                <rect key="frame" x="30" y="130" width="355" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shop Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ei-5Z-pmV">
+                                <rect key="frame" x="44" y="54" width="326" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="CCx-oF-9nE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JbU-Ki-gOI">
+                                <rect key="frame" x="204.5" y="96" width="165.5" height="97"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="97" id="kV4-Q6-xuV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="photo the shop" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtB-Mo-vCk">
+                                <rect key="frame" x="20" y="96" width="132.5" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="VWR-cg-f5A"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wD-Cm-82q">
+                                <rect key="frame" x="91" y="133" width="67.5" height="50.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50.5" id="Xwg-lh-q3m"/>
+                                </constraints>
+                                <state key="normal" image="photo.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="48"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePhoto:" destination="jfy-KR-Dnw" eventType="touchUpInside" id="7u9-Ur-LNN"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YOC-Ua-w03">
+                                <rect key="frame" x="205" y="212" width="190" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="vtx-b1-lPW"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="REV-kt-Ife">
+                                    <size key="itemSize" width="170" height="125"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="photoCell" id="25y-0f-cc5" customClass="PhotoShopViewCell" customModule="HouseFix" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1.5" width="170" height="125"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NYM-KK-MKT" userLabel="Content_View">
+                                            <rect key="frame" x="0.0" y="0.0" width="170" height="125"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dMJ-sk-nUz" userLabel="Image_View">
+                                                    <rect key="frame" x="0.0" y="0.0" width="170" height="125"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="dMJ-sk-nUz" secondAttribute="trailing" id="5yn-4m-OuR"/>
+                                                <constraint firstAttribute="bottom" secondItem="dMJ-sk-nUz" secondAttribute="bottom" id="GtH-xw-ev0"/>
+                                                <constraint firstItem="dMJ-sk-nUz" firstAttribute="top" secondItem="NYM-KK-MKT" secondAttribute="top" id="HY0-SL-47u"/>
+                                                <constraint firstItem="dMJ-sk-nUz" firstAttribute="leading" secondItem="NYM-KK-MKT" secondAttribute="leading" id="iyW-6b-Moz"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="170" height="125"/>
+                                        <connections>
+                                            <outlet property="imgPhotos" destination="dMJ-sk-nUz" id="Xqh-ah-Sp7"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo inside shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVO-8e-VcR">
+                                <rect key="frame" x="20" y="225.5" width="156.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zir-ea-cF3">
+                                <rect key="frame" x="91" y="268.5" width="68" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="XRs-Mf-hwD"/>
+                                </constraints>
+                                <state key="normal" image="photo.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="48"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnGetPhoto:" destination="jfy-KR-Dnw" eventType="touchUpInside" id="R9g-ib-hA9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Discription" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQ3-p3-DVD">
+                                <rect key="frame" x="20" y="363" width="157" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uk4-uZ-Egq">
+                                <rect key="frame" x="20" y="400" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rPT-yY-N8Z"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0ei-5Z-pmV" firstAttribute="top" secondItem="2P5-Wf-Saa" secondAttribute="topMargin" constant="10" id="58P-s9-2hp"/>
+                            <constraint firstItem="XVO-8e-VcR" firstAttribute="leading" secondItem="rPT-yY-N8Z" secondAttribute="leading" constant="20" id="5g7-H1-Wb0"/>
+                            <constraint firstItem="rPT-yY-N8Z" firstAttribute="trailing" secondItem="0ei-5Z-pmV" secondAttribute="trailing" constant="44" id="5tJ-Yb-WnO"/>
+                            <constraint firstItem="7wD-Cm-82q" firstAttribute="top" secondItem="wtB-Mo-vCk" secondAttribute="bottom" constant="8" symbolic="YES" id="71G-7p-I3J"/>
+                            <constraint firstItem="Zir-ea-cF3" firstAttribute="top" secondItem="XVO-8e-VcR" secondAttribute="bottom" constant="19" id="AVY-hF-rIS"/>
+                            <constraint firstItem="7wD-Cm-82q" firstAttribute="leading" secondItem="rPT-yY-N8Z" secondAttribute="leading" constant="91" id="Lda-sV-EYb"/>
+                            <constraint firstItem="rPT-yY-N8Z" firstAttribute="trailing" secondItem="YOC-Ua-w03" secondAttribute="trailing" constant="19" id="Tcf-gF-m3T"/>
+                            <constraint firstItem="rPT-yY-N8Z" firstAttribute="trailing" secondItem="JbU-Ki-gOI" secondAttribute="trailing" constant="44" id="Thp-5b-Nud"/>
+                            <constraint firstItem="JbU-Ki-gOI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wtB-Mo-vCk" secondAttribute="trailing" constant="8" symbolic="YES" id="cCu-ur-rRP"/>
+                            <constraint firstItem="JbU-Ki-gOI" firstAttribute="leading" secondItem="7wD-Cm-82q" secondAttribute="trailing" constant="46" id="iq0-Gx-0j9"/>
+                            <constraint firstItem="XVO-8e-VcR" firstAttribute="top" secondItem="7wD-Cm-82q" secondAttribute="bottom" constant="42" id="jiW-6Q-gxV"/>
+                            <constraint firstItem="wtB-Mo-vCk" firstAttribute="leading" secondItem="rPT-yY-N8Z" secondAttribute="leading" constant="20" id="nhm-dQ-Zoy"/>
+                            <constraint firstItem="wtB-Mo-vCk" firstAttribute="top" secondItem="0ei-5Z-pmV" secondAttribute="bottom" constant="8" id="nkg-N5-lhh"/>
+                            <constraint firstItem="0ei-5Z-pmV" firstAttribute="leading" secondItem="rPT-yY-N8Z" secondAttribute="leading" constant="44" id="owO-XS-VNc"/>
+                            <constraint firstItem="JbU-Ki-gOI" firstAttribute="top" secondItem="0ei-5Z-pmV" secondAttribute="bottom" constant="8" id="plv-ng-9ml"/>
+                            <constraint firstItem="YOC-Ua-w03" firstAttribute="leading" secondItem="Zir-ea-cF3" secondAttribute="trailing" constant="46" id="sQI-Hc-csH"/>
+                            <constraint firstItem="Zir-ea-cF3" firstAttribute="leading" secondItem="rPT-yY-N8Z" secondAttribute="leading" constant="91" id="sbw-N8-7yU"/>
+                            <constraint firstItem="YOC-Ua-w03" firstAttribute="top" secondItem="JbU-Ki-gOI" secondAttribute="bottom" constant="19" id="x5q-C6-iia"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionVI" destination="YOC-Ua-w03" id="3RX-Sw-r4Y"/>
+                        <outlet property="imagePhotoShop" destination="JbU-Ki-gOI" id="O62-HI-bwV"/>
+                        <outlet property="shopNameTextField" destination="0ei-5Z-pmV" id="xtG-4z-TGr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="exb-3n-o1f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -926,10 +1049,14 @@
         <image name="electrician" width="1080" height="515"/>
         <image name="home" width="5445" height="5199"/>
         <image name="house" catalog="system" width="128" height="106"/>
+        <image name="photo.fill" catalog="system" width="128" height="93"/>
         <image name="plumber" width="612" height="408"/>
         <image name="wallpainter" width="1400" height="933"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
