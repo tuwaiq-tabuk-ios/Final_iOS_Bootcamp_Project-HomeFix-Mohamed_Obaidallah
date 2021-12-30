@@ -7,6 +7,9 @@
 
 import UIKit
 import PhotosUI
+import Firebase
+import FirebaseAuth
+
 class AddShopVC: UIViewController,
                  UIImagePickerControllerDelegate ,
                  UINavigationControllerDelegate,
@@ -28,15 +31,16 @@ class AddShopVC: UIViewController,
   @IBOutlet weak var submitButton: UIButton!
   
   
+  
   var arryPhoto = [UIImage]()
   let sectionTypeArry = ["Electrical","Plumber","Dyeing","Building"]
-  let arryCitys = ["Tabuk","Riyadh","Jeddah","Dammam"]
+  var arryCitys = ["Tabuk","Riyadh","Jeddah","Dammam"]
   var pickerSection = UIPickerView()
   var currentIndex = 0
   var pickerCitys = UIPickerView()
   var toolBarSection:UIToolbar!
   var toolBarCitys:UIToolbar!
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     hideKeyboardWhenTappedAround()
@@ -69,13 +73,12 @@ class AddShopVC: UIViewController,
     toolBarCitys.sizeToFit()
     
     let doneButton2 = UIBarButtonItem(title: "Done",
-                                     style: UIBarButtonItem.Style.plain,
-                                     target: self,
-                                     action: #selector(donePickerCitys))
+                                      style: UIBarButtonItem.Style.plain,
+                                      target: self,
+                                      action: #selector(donePickerCitys))
     
     toolBarCitys.setItems([doneButton2], animated: false)
     toolBarCitys.isUserInteractionEnabled = true
-    
     
     typeShopTextField.inputView = pickerSection
     typeShopTextField.inputAccessoryView = toolBarSection
@@ -91,18 +94,131 @@ class AddShopVC: UIViewController,
   
   
   @objc func donePickerCitys() {
-      cityTextField.text = arryCitys[currentIndex]
-      cityTextField.resignFirstResponder()
+    cityTextField.text = arryCitys[currentIndex]
+    cityTextField.resignFirstResponder()
   }
   
   
   @IBAction func submitBut(_ sender: UIButton) {
     
+    let db = Firestore.firestore()
+    let auth = Auth.auth().currentUser
+    let storage = Storage.storage()
+    
+    var documentID = ""
+    if documentID == ""{
+      documentID = UUID().uuidString
+    }
+    
+    var imageID = UUID().uuidString
+    let imageFolderID = UUID().uuidString
+    
+    let uploadMetaData = StorageMetadata()
+    uploadMetaData.contentType = "image/jpeg"
+    
+    let type = self.typeShopTextField.text?.lowercased()
+    
+    let database = db.collection("sections").document(type!)
+    let id = database.documentID
+    
+    database.setData(["\(imageFolderID)": [
+      "shopNameTextField":self.shopNameTextField.text!,
+      "descriptionTextField":self.descriptionTextField.text!,
+      "phoneNumberTextField":self.phoneNumberTextField.text!,
+      "locationLinktextField":self.locationLinktextField.text!,
+      "typeShopTextField":self.typeShopTextField.text!,
+      "cityTextField":self.cityTextField.text!,
+      "images":[""],
+      "logo": "",
+    ]],merge: true) {
+      error in guard error == nil else {
+        return
+      }
+    
+    db.collection ("stores").document(auth!.uid).collection("store").document(imageFolderID).setData(["id":imageFolderID,"type":type!]) {
+      error in guard error == nil else {
+        return
+      }
+    }
+    }
+    
+    let logoImage = self.imagePhotoShop.image?.jpegData(compressionQuality: 0.5)
+    
+    imageID = UUID().uuidString
+    let storageRF = storage.reference().child(auth!.uid).child(imageFolderID).child(imageID)
+    storageRF.putData(logoImage!, metadata:uploadMetaData) {
+      metadata, error in guard error == nil else {
+        return
+      }
+    
+    storageRF.downloadURL { url, error in
+      if error != nil {
+        
+      }else {
+        db.collection("sections").document(type!).setData(
+          ["\(imageFolderID)":[ "logo": url?.absoluteString]],merge:true, completion: {
+            error in guard error == nil else {
+              print("-- error: \(error?.localizedDescription)")
+              return
+            }
+          
+          print("-- Finish")
+          
+          } )
+      }
+    }
+    }
+    
+    var imageData = [Data]()
+    
+    for image in arryPhoto {
+      let data = image.jpegData(compressionQuality: 0.5)
+      imageData.append(data!)
+    }
+    var imageURL = [String]()
+    for image in imageData {
+      imageID = UUID().uuidString
+      
+      let storageRF = storage.reference().child(auth!.uid).child(imageFolderID).child(imageID)
+      storageRF.putData(image, metadata:uploadMetaData) {
+        metadata, error in guard error == nil else {
+          return
+        }
+      
+      storageRF.downloadURL { url, error in
+        if error != nil {
+          
+        }else {
+          imageURL.append(url!.absoluteString)
+          
+          db.collection("sections").document(type!).setData(
+            ["\(imageFolderID)":["shopNameTextField":self.shopNameTextField.text!,
+                                 "descriptionTextField":self.descriptionTextField.text!,
+                                 "phoneNumberTextField":self.phoneNumberTextField.text!,
+                                 "locationLinktextField":self.locationLinktextField.text!,
+                                 "typeShopTextField":self.typeShopTextField.text!,
+                                 "cityTextField":self.cityTextField.text!,
+                                 "images":imageURL]
+            ],
+            merge:true, completion: {
+              error in guard error == nil else {
+                print("-- error: \(error?.localizedDescription)")
+                return
+              }
+            
+            print("-- Finish")
+            } )
+        }
+      }
+      }
+    }
   }
+  
   
   @IBAction func takePhoto(_ sender: Any) {
     showPhotoAlert()
   }
+  
   
   // Add store photos and the option is either from the photo library or the camera
   func showPhotoAlert(){
@@ -119,7 +235,6 @@ class AddShopVC: UIViewController,
                                     self.getPhoto(type: .photoLibrary)
                                   }))
     
-    
     alert.addAction(UIAlertAction(title: "Cancel",
                                   style: .cancel,
                                   handler: nil))
@@ -134,7 +249,6 @@ class AddShopVC: UIViewController,
     pickerCont.allowsEditing = false
     pickerCont.delegate = self
     present(pickerCont, animated: true, completion: nil)
-    
   }
   
   
@@ -151,6 +265,7 @@ class AddShopVC: UIViewController,
   func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
     dismiss(animated: true, completion: nil)
   }
+  
   
   // Start adding pictures to the shop
   @IBAction func btnGetPhoto(_ sender: Any) {
@@ -181,7 +296,6 @@ class AddShopVC: UIViewController,
     let phPicker = PHPickerViewController(configuration: config)
     phPicker.delegate = self
     present(phPicker, animated: true, completion: nil)
-    
   }
   
   
@@ -210,6 +324,7 @@ class AddShopVC: UIViewController,
     return 1
   }
   
+  
   func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
     
     if (pickerView == pickerSection){
@@ -220,6 +335,7 @@ class AddShopVC: UIViewController,
     }
     
   }
+  
   
   func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?{
     if (pickerView == pickerSection){
@@ -233,14 +349,14 @@ class AddShopVC: UIViewController,
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     currentIndex = row
     if (pickerView == pickerSection){
-    typeShopTextField.text = sectionTypeArry[row]
+      typeShopTextField.text = sectionTypeArry[row]
     }else{
       cityTextField.text = arryCitys[row]
     }
   }
   
+  
   func setUpElements(){
-    
     Utilities.styleTextField(shopNameTextField)
     Utilities.styleTextField(descriptionTextField)
     Utilities.styleTextField(phoneNumberTextField)
@@ -248,6 +364,7 @@ class AddShopVC: UIViewController,
     Utilities.styleTextField(typeShopTextField)
     Utilities.styleTextField(cityTextField)
     Utilities.styleFilledButton(submitButton)
-    
   }
+  
+  
 }

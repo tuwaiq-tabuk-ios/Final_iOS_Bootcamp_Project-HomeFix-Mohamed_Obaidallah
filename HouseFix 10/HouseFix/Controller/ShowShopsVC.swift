@@ -20,6 +20,7 @@ class ShowShopsVC: UIViewController,
   
   var timer : Timer?
   var currnetCellIndex = 0
+  
   var showShops : Shops! {
     didSet {
       navigationItem.title = showShops.name
@@ -34,18 +35,17 @@ class ShowShopsVC: UIViewController,
   
   override func viewWillAppear(_ animated: Bool) {
 //    nameShop.text = showShops.name
-    shopAddresses.text = showShops.address
+    shopAddresses.text = showShops.description
     
-    mapView.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(showShops.longitude[1]), longitude: CLLocationDegrees(showShops.longitude[0])), latitudinalMeters: CLLocationDistance(100), longitudinalMeters: CLLocationDistance(100)), animated: true)
-    
-    let coords = CLLocationCoordinate2D(latitude: CLLocationDegrees(showShops.longitude[0]), longitude: CLLocationDegrees(showShops.longitude[1]))
-    
-    let annotation = MKPointAnnotation()
-    annotation.coordinate = coords
-    mapView.addAnnotation(annotation)
-  
-    mapView.mapType = .standard
-    
+//    mapView.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(showShops.longitude[1]), longitude: CLLocationDegrees(showShops.longitude[0])), latitudinalMeters: CLLocationDistance(100), longitudinalMeters: CLLocationDistance(100)), animated: true)
+//
+//    let coords = CLLocationCoordinate2D(latitude: CLLocationDegrees(showShops.longitude[0]), longitude: CLLocationDegrees(showShops.location)!)
+//
+//    let annotation = MKPointAnnotation()
+//    annotation.coordinate = coords
+//    mapView.addAnnotation(annotation)
+//
+//    mapView.mapType = .standard
   }
   
   
@@ -65,12 +65,14 @@ class ShowShopsVC: UIViewController,
       currnetCellIndex = 0
     }
 
-      coll.scrollToItem(at: IndexPath(item: currnetCellIndex, section: 0), at: .centeredHorizontally, animated: true)
+      coll.scrollToItem(at: IndexPath(item: currnetCellIndex,
+                                      section: 0),
+                        at: .centeredHorizontally,
+                        animated: true)
   }
   
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    
     return showShops.photo.count
   }
   
@@ -78,7 +80,8 @@ class ShowShopsVC: UIViewController,
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "showImagesCell", for: indexPath) as! ShowShopCollViCell
     
-    cell.imgShopsMove.image = showShops.photo[indexPath.row]
+    cell.imgShopsMove.sd_setImage(with: URL(string: showShops.photo[indexPath.row]), placeholderImage: UIImage(named: "home"))
+    
     
     return cell
   }

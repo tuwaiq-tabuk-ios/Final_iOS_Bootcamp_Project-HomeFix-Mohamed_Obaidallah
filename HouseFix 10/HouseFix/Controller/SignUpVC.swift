@@ -14,7 +14,6 @@ class SignUpVC: UIViewController,
                 UIPickerViewDataSource,
                 UITextFieldDelegate {
   
-  
   @IBOutlet weak var accountType: UITextField!
   @IBOutlet weak var email: UITextField!
   @IBOutlet weak var firstName: UITextField!
@@ -118,7 +117,6 @@ class SignUpVC: UIViewController,
           print("error createUser: \(error?.localizedDescription)")
         } else {
           let db = Firestore.firestore()
-          
           db.collection("users").document((result?.user.uid)!).setData (["firstName":self.firstName.text!,"lastName":self.lastName.text!,"accountType":self.accountType.text!,"phoneNumber":self.phoneNumber.text!,]) { error in
             if error != nil {
               print("error add User to database: \(error?.localizedDescription)")
@@ -151,7 +149,6 @@ class SignUpVC: UIViewController,
   }
   
   func setUpElements(){
-    
     Utilities.styleTextField(email)
     Utilities.styleTextField(password)
     Utilities.styleTextField(phoneNumber)
@@ -159,8 +156,6 @@ class SignUpVC: UIViewController,
     Utilities.styleTextField(firstName)
     Utilities.styleTextField(lastName)
     Utilities.styleFilledButton(signUpButton)
-    
   }
-  
   
 }

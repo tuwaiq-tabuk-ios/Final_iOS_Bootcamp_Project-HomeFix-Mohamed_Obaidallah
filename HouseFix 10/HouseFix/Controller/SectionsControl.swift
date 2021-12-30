@@ -6,18 +6,29 @@
 //
 
 import UIKit
+import SDWebImage
+import Firebase
+import FirebaseAuth
 
+struct Section {
+  let name: String
+  let image: String
+  let stores: [Shops]
+}
 class SectionsControl : UIViewController,
                         UICollectionViewDelegate,
                         UICollectionViewDataSource {
   
   var arrayShop:[Shops]!
   var selectedShop:Shops!
+  var array:[Shops] = [Shops]()
+  @IBOutlet weak var shopsCollectionView: UICollectionView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
   }
+  
   
   func collectionView(
     _ collectionView: UICollectionView,
@@ -36,9 +47,9 @@ class SectionsControl : UIViewController,
       collectionView.dequeueReusableCell(withReuseIdentifier: "cell",
                                          for: indexPath) as! ShopViewCell
     
-    cell.imageShops.image = arrayShop[indexPath.row].logo
+    cell.imageShops.sd_setImage(with: URL(string: arrayShop[indexPath.row].logo), placeholderImage: UIImage(named: "home"))
     cell.name.text = arrayShop[indexPath.row].name
-    cell.descriptioN.text = arrayShop[indexPath.row].description
+    cell.descriptioN.text = arrayShop[indexPath.row].cities
     
     return cell
   }
@@ -62,6 +73,5 @@ class SectionsControl : UIViewController,
       vc.showShops = selectedShop
     }
   }
-  
   
 }
