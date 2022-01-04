@@ -7,7 +7,9 @@
 
 import UIKit
 
+
 class Utilities {
+  
   static func styleTextField(_ textField:UITextField){
     
     // Create the bottom line
@@ -27,6 +29,7 @@ class Utilities {
     textField.layer.addSublayer(bottomLine)
   }
   
+  
   static func styleFilledButton(_ button:UIButton){
     
     // Filled rounded corner style
@@ -37,6 +40,7 @@ class Utilities {
     button.layer.cornerRadius = 25.0
     button.tintColor = UIColor.white
   }
+  
   
   static func styleHollowButton(_ button:UIButton){
     

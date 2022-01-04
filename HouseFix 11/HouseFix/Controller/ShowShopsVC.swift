@@ -17,15 +17,17 @@ class ShowShopsVC: UIViewController,
   @IBOutlet weak var nameShop: UILabel!
   @IBOutlet weak var shopAddresses: UILabel!
   @IBOutlet weak var mapView: MKMapView!
+  @IBOutlet weak var phoneNumber: UILabel!
   
   var timer : Timer?
   var currnetCellIndex = 0
   
-  var showShops : Shops! {
+  var showShops : Shop! {
     didSet {
       navigationItem.title = showShops.name
     }
   }
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -34,18 +36,17 @@ class ShowShopsVC: UIViewController,
   
   
   override func viewWillAppear(_ animated: Bool) {
-//    nameShop.text = showShops.name
+    nameShop.text = showShops.name
     shopAddresses.text = showShops.description
+    phoneNumber.text = showShops.phoneNumber
     
-//    mapView.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(showShops.longitude[1]), longitude: CLLocationDegrees(showShops.longitude[0])), latitudinalMeters: CLLocationDistance(100), longitudinalMeters: CLLocationDistance(100)), animated: true)
-//
-//    let coords = CLLocationCoordinate2D(latitude: CLLocationDegrees(showShops.longitude[0]), longitude: CLLocationDegrees(showShops.location)!)
-//
-//    let annotation = MKPointAnnotation()
-//    annotation.coordinate = coords
-//    mapView.addAnnotation(annotation)
-//
-//    mapView.mapType = .standard
+  }
+  
+  
+  @IBAction func locationPressted(_ sender: Any) {
+    UIApplication.shared.open(URL(string: showShops.locationLinktextField)!,
+                                     completionHandler: nil)
+    
   }
   
   
@@ -58,6 +59,14 @@ class ShowShopsVC: UIViewController,
   }
   
   
+  override func prepare(for segue: UIStoryboardSegue,
+                        sender: Any?) {
+    if let vc = segue.destination as? SendRequestVC {
+      vc.dataRrquest = showShops
+    }
+    
+    
+  }
   @objc func nextImage(){
     if currnetCellIndex < showShops.photo.count - 1 {
       currnetCellIndex += 1
@@ -92,5 +101,5 @@ class ShowShopsVC: UIViewController,
     return CGSize(width: collectionView.frame.width ,
                   height: collectionView.frame.height )
   }
- 
+  
 }

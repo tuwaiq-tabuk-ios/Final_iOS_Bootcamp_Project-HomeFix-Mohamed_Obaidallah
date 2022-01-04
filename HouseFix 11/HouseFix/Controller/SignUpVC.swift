@@ -14,6 +14,15 @@ class SignUpVC: UIViewController,
                 UIPickerViewDataSource,
                 UITextFieldDelegate {
   
+  // MARK: - Properties
+  
+  let typeArray = ["User","Add a Shop","professional"]
+  var pickerView = UIPickerView()
+  var currentIndex = 0
+  
+  
+  // MARK: - Outlets
+  
   @IBOutlet weak var accountType: UITextField!
   @IBOutlet weak var email: UITextField!
   @IBOutlet weak var firstName: UITextField!
@@ -22,9 +31,6 @@ class SignUpVC: UIViewController,
   @IBOutlet weak var phoneNumber: UITextField!
   @IBOutlet weak var signUpButton: UIButton!
   
-  let typeArray = ["User","Add a Shop","professional"]
-  var pickerView = UIPickerView()
-  var currentIndex = 0
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -79,8 +85,8 @@ class SignUpVC: UIViewController,
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     currentIndex = row
     accountType.text = typeArray[row]
-    
   }
+  
   
   // Verify Data Entry And Show a Message to The User
   @IBAction func signUpTapped(_ sender: Any) {
@@ -111,14 +117,21 @@ class SignUpVC: UIViewController,
       present(alert, animated: true, completion: nil)
     } else {
       
-      Auth.auth().createUser(withEmail: email.text!, password: password.text!) { result, error in
-        
+      Auth.auth().createUser(withEmail: email.text!,
+                             password: password.text!) { result, error in
         if error != nil {
+          
           print("error createUser: \(error?.localizedDescription)")
         } else {
           let db = Firestore.firestore()
-          db.collection("users").document((result?.user.uid)!).setData (["firstName":self.firstName.text!,"lastName":self.lastName.text!,"accountType":self.accountType.text!,"phoneNumber":self.phoneNumber.text!,]) { error in
+          db.collection("users").document((result?.user.uid)!).setData (
+            ["firstName":self.firstName.text!,
+             "lastName":self.lastName.text!,
+             "accountType":self.accountType.text!,
+             "phoneNumber":self.phoneNumber.text!,
+             "hasStore":false]) { error in
             if error != nil {
+              
               print("error add User to database: \(error?.localizedDescription)")
             } else {
               // Specify the account type to show the interface for data entry
@@ -129,7 +142,7 @@ class SignUpVC: UIViewController,
               } else if self.accountType.text! == "Add a Shop" {
                 vc = Storyboard.instantiateViewController(identifier: "mainShop")
               } else {
-                vc = Storyboard.instantiateViewController(identifier: "mainProfessional")
+                vc = Storyboard.instantiateViewController(identifier: "mainShop")
               }
               vc.modalPresentationStyle = .overFullScreen
               self.present(vc , animated: true)
@@ -140,7 +153,7 @@ class SignUpVC: UIViewController,
     }
   }
   
-  // go to the LogIn page
+  //Go to the LogIn page
   @IBAction func userHaveAccountTapped(_ sender: Any) {
     let Storyboard = UIStoryboard(name: "Main", bundle: nil)
     let vc = Storyboard.instantiateViewController(identifier: "LogIn")

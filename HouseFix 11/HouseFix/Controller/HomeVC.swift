@@ -43,27 +43,28 @@ class HomeVC: UIViewController,
   
   
   func getData() {
+    
     let db = Firestore.firestore()
     let auth = Auth.auth().currentUser
     let collectionRF:CollectionReference = db.collection("sections")
     collectionRF.getDocuments { snapshot, error in
       if error != nil {
       } else {
-        array.removeAll()
+        shops.removeAll()
         for document in snapshot!.documents {
           let datas = document.data()
           for (key,value) in datas {
             let data = value as! Dictionary<String,Any>
-            let shop = Shops(id: key,
-                             name: data["shopNameTextField"] as! String,
-                             logo: data["logo"] as! String,
-                             photo: data["images"] as! Array,
-                             description: data["descriptionTextField"] as! String,
-                             location: data["locationLinktextField"] as! String,
-                             phoneNumber: data["phoneNumberTextField"] as! String, cities: data["cityTextField"] as! String,
-                             type: data["typeShopTextField"] as! String)
+            let shop = Shop(id: key,
+                            name: data["shopNameTextField"] as! String,
+                            logo: data["logo"] as! String,
+                            photo: data["images"] as! Array,
+                            description: data["descriptionTextField"] as! String,
+                            locationLinktextField: data["locationLinktextField"] as! String,
+                            phoneNumber: data["phoneNumberTextField"] as! String, cities: data["cityTextField"] as! String,
+                            type: data["typeShopTextField"] as! String)
             
-            array.append(shop)
+            shops.append(shop)
             
           }
         }
@@ -72,7 +73,7 @@ class HomeVC: UIViewController,
   }
   
   // MARK: Move Images
-
+  
   func startTimer()  {
     timer = Timer.scheduledTimer(timeInterval: 2.5,
                                  target: self,
@@ -90,22 +91,27 @@ class HomeVC: UIViewController,
       currnetCellIndex = 0
     }
     
-    collectionView.scrollToItem(at: IndexPath(item: currnetCellIndex, section: 0), at: .centeredHorizontally, animated: true)
+    collectionView.scrollToItem(at: IndexPath(item: currnetCellIndex,
+                                              section: 0),
+                                at: .centeredHorizontally,
+                                animated: true)
   }
   
   
-  func collectionView(_
-                        collectionView: UICollectionView,
-                      numberOfItemsInSection section: Int) -> Int {
+  func collectionView(_ collectionView:
+                        UICollectionView,
+                      numberOfItemsInSection
+                        section: Int) -> Int {
     
     return arrProductImge.count
     
   }
   
   
-  func collectionView(_
-                        collectionView: UICollectionView,
-                      cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+  func collectionView(_ collectionView:
+                        UICollectionView,
+                      cellForItemAt indexPath:
+                        IndexPath) -> UICollectionViewCell {
     let cell =
       collectionView.dequeueReusableCell(withReuseIdentifier: "homeCell",
                                          for: indexPath) as! HomeCellCollection
@@ -116,8 +122,7 @@ class HomeVC: UIViewController,
   }
   
   
-  func collectionView(_
-                        collectionView: UICollectionView,
+  func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                       sizeForItemAt indexPath: IndexPath) -> CGSize {
     
@@ -126,8 +131,7 @@ class HomeVC: UIViewController,
   }
   
   
-  func collectionView(_
-                        collectionView: UICollectionView,
+  func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
     return 0
   }
@@ -137,8 +141,8 @@ class HomeVC: UIViewController,
     switch segue.identifier {
     case "shopElectrical":
       if let vc = segue.destination as? SectionsControl {
-        var arrayNew:[Shops] = [Shops]()
-        array.forEach { Shops in
+        var arrayNew:[Shop] = [Shop]()
+        shops.forEach { Shops in
           if Shops.type == "Electrical" {
             arrayNew.append(Shops)
           }
@@ -147,8 +151,8 @@ class HomeVC: UIViewController,
       }
     case "shopPlumber":
       if let vc = segue.destination as? SectionsControl {
-        var arrayNew:[Shops] = [Shops]()
-        array.forEach { Shops in
+        var arrayNew:[Shop] = [Shop]()
+        shops.forEach { Shops in
           if Shops.type == "Plumber" {
             arrayNew.append(Shops)
           }
@@ -157,8 +161,8 @@ class HomeVC: UIViewController,
       }
     case "shopDyeing":
       if let vc = segue.destination as? SectionsControl {
-        var arrayNew:[Shops] = [Shops]()
-        array.forEach { Shops in
+        var arrayNew:[Shop] = [Shop]()
+        shops.forEach { Shops in
           if Shops.type == "Dyeing" {
             arrayNew.append(Shops)
           }
@@ -167,8 +171,8 @@ class HomeVC: UIViewController,
       }
     case "shopBuilding":
       if let vc = segue.destination as? SectionsControl {
-        var arrayNew:[Shops] = [Shops]()
-        array.forEach { Shops in
+        var arrayNew:[Shop] = [Shop]()
+        shops.forEach { Shops in
           if Shops.type == "Building" {
             arrayNew.append(Shops)
           }
