@@ -29,9 +29,7 @@ class OrdersVC: UIViewController ,
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    
     getData()
-    
   }
   
   
@@ -46,8 +44,9 @@ class OrdersVC: UIViewController ,
                       cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = orderCollct.dequeueReusableCell(withReuseIdentifier: "OrderCell", for: indexPath) as! OrdersCollCell
     
+    cell.imageOrder.sd_setImage(with: URL(string: receivingOrders[indexPath.row].image),
+                                placeholderImage: UIImage(named: "home"))
     cell.lblPhoneNum.text = receivingOrders[indexPath.row].phoneNum
-    cell.imageOrder.sd_setImage(with: URL(string: receivingOrders[indexPath.row].image), placeholderImage: UIImage(named: "home"))
     cell.lblDescription.text = receivingOrders[indexPath.row].description
     
     return cell

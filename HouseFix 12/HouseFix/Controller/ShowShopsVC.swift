@@ -44,9 +44,9 @@ class ShowShopsVC: UIViewController,
   
   
   @IBAction func locationPressted(_ sender: Any) {
-    UIApplication.shared.open(URL(string: showShops.locationLinktextField)!,
+    UIApplication.shared.open(URL(string: showShops
+                                    .locationLinktextField)!,
                                      completionHandler: nil)
-    
   }
   
   

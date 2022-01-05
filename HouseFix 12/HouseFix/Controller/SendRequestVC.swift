@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+
 class SendRequestVC: UIViewController ,
                      UIImagePickerControllerDelegate ,
                      UINavigationControllerDelegate{
@@ -25,6 +26,7 @@ class SendRequestVC: UIViewController ,
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    hideKeyboardWhenTappedAround()
   }
   
   
@@ -87,8 +89,10 @@ class SendRequestVC: UIViewController ,
     db.collection("order")
       .document(dataRrquest.id)
       .setData([auth.uid:[ "phoneNumTextField" : self.phoneNumTextField.text!,
-                           "descrptionTextField" : self.descrptionTextField.text!]], merge: true)
+                           "descrptionTextField" : self.descrptionTextField.text!]],merge: true)
     
+    
+    /// Start
     let storage = Storage.storage()
     
     var imageID = UUID().uuidString
@@ -118,22 +122,24 @@ class SendRequestVC: UIViewController ,
       }
     }
     }
+    /// end 
     
     let alert = UIAlertController(title: "Done!",
                                   message: "Thank you,the owner will contact you",
                                   preferredStyle: .alert)
     
     let action = UIAlertAction(title: "Ok",
-                               style: .cancel,
-                               handler: nil)
-    
-    alert.addAction(action)
-    present(alert, animated: true, completion: nil)
-   
+                               style: .cancel) { action in
       let storyboard = UIStoryboard(name: "Main", bundle: nil)
       let vc = storyboard.instantiateViewController(identifier: "mainUser")
       vc.modalPresentationStyle = .overFullScreen
-      present(vc , animated: true)
+      self.present(vc , animated: true)
+    }
+    
+    alert.addAction(action)
+    present(alert, animated: true, completion: nil)
+    
+    
   }
   
 }

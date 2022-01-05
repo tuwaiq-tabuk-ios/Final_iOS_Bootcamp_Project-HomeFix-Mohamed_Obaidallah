@@ -14,8 +14,6 @@ class HomeVC: UIViewController,
               UICollectionViewDelegateFlowLayout{
   
   
-  @IBOutlet weak var collectionView: UICollectionView!
-  
   var arrProductImge = [UIImage(named: "H2")!,
                         UIImage(named: "H11")!,
                         UIImage(named: "H13")!,
@@ -23,11 +21,16 @@ class HomeVC: UIViewController,
                         UIImage(named: "H12")!,
                         UIImage(named: "H10")!]
   
+  
+  @IBOutlet weak var collectionView: UICollectionView!
+  
+  
   var timer : Timer?
   var currnetCellIndex = 0
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    hideKeyboardWhenTappedAround()
     
     collectionView.delegate = self
     collectionView.dataSource = self
@@ -113,9 +116,10 @@ class HomeVC: UIViewController,
                       cellForItemAt indexPath:
                         IndexPath) -> UICollectionViewCell {
     let cell =
-      collectionView.dequeueReusableCell(withReuseIdentifier: "homeCell",
-                                         for: indexPath) as! HomeCellCollection
-    
+      collectionView
+      .dequeueReusableCell(
+        withReuseIdentifier: "homeCell",
+        for: indexPath) as! HomeCellCollection
     cell.imgCollection.image = arrProductImge[indexPath.row]
     
     return cell
@@ -132,7 +136,8 @@ class HomeVC: UIViewController,
   
   
   func collectionView(_ collectionView: UICollectionView,
-                      layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+                      layout collectionViewLayout: UICollectionViewLayout,
+                      minimumLineSpacingForSectionAt section: Int) -> CGFloat {
     return 0
   }
   

@@ -22,7 +22,7 @@ class AddShopVC: UIViewController,
   var pickerSection = UIPickerView()
   var currentIndex = 0
   var pickerCitys = UIPickerView()
-  var toolBarSection:UIToolbar!
+  var toolBarSection: UIToolbar!
   var toolBarCitys: UIToolbar!
   var ID: String!
   var typeOld: String!
@@ -68,6 +68,11 @@ class AddShopVC: UIViewController,
     toolBarSection.setItems([doneButton], animated: false)
     toolBarSection.isUserInteractionEnabled = true
     
+    typeShopTextField.inputView = pickerSection
+    typeShopTextField.inputAccessoryView = toolBarSection
+   
+    
+    
     toolBarCitys = UIToolbar()
     toolBarCitys.barStyle = UIBarStyle.default
     toolBarCitys.isTranslucent = true
@@ -81,10 +86,10 @@ class AddShopVC: UIViewController,
     toolBarCitys.setItems([doneButton2], animated: false)
     toolBarCitys.isUserInteractionEnabled = true
     
-    typeShopTextField.inputView = pickerSection
-    typeShopTextField.inputAccessoryView = toolBarSection
     cityTextField.inputView = pickerCitys
     cityTextField.inputAccessoryView = toolBarCitys
+    
+    
     
     let db = Firestore.firestore()
     let auth = Auth.auth().currentUser!

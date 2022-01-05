@@ -30,6 +30,7 @@ class SignUpVC: UIViewController,
   @IBOutlet weak var password: UITextField!
   @IBOutlet weak var phoneNumber: UITextField!
   @IBOutlet weak var signUpButton: UIButton!
+  @IBOutlet weak var userHaveAccountButton: UIButton!
   
   
   override func viewDidLoad() {
@@ -60,7 +61,7 @@ class SignUpVC: UIViewController,
     
   }
   
-  
+
   @objc func donePicker() {
     accountType.text = typeArray[currentIndex]
     accountType.resignFirstResponder()
