@@ -55,6 +55,7 @@ class LogInVC: UIViewController {
     present(vc , animated: true)
   }
   
+  
   // 
   func logIn(email:String,password:String) {
     Auth.auth().signIn(withEmail: email, password: password) { authResult, err in
@@ -70,7 +71,7 @@ class LogInVC: UIViewController {
         
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
-      
+        
       } else {
         let db = Firestore.firestore()
         
@@ -87,11 +88,13 @@ class LogInVC: UIViewController {
             let Storyboard = UIStoryboard(name: "Main", bundle: nil)
             var vc:UIViewController!
             if data["accountType"] as! String == "User"{
-            vc = Storyboard.instantiateViewController(identifier: "mainUser")
-            } else if data["accountType"] as! String == "Add a Shop" {
-              vc = Storyboard.instantiateViewController(identifier: "mainShop")
+              vc = Storyboard.instantiateViewController(identifier: "mainUser")
             } else {
-              vc = Storyboard.instantiateViewController(identifier: "mainShop")
+              if data["hasStore"] as! Bool {
+                vc = Storyboard.instantiateViewController(identifier: "mainOrder")
+              } else {
+                vc = Storyboard.instantiateViewController(identifier: "mainShop")
+              }
             }
             
             vc.modalPresentationStyle = .overFullScreen

@@ -8,15 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		2710D5132770619500797ED9 /* ShowShopCollViCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710D5122770619500797ED9 /* ShowShopCollViCell.swift */; };
+		2721B0D227819BE70038EEA2 /* SendRequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2721B0D127819BE70038EEA2 /* SendRequestVC.swift */; };
+		2721B0D52782E2640038EEA2 /* OrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2721B0D42782E2640038EEA2 /* OrdersVC.swift */; };
+		2721B0D72782E3190038EEA2 /* OrdersCollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2721B0D62782E3190038EEA2 /* OrdersCollCell.swift */; };
 		273098A52767715B00ABE3F0 /* CollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273098A42767715B00ABE3F0 /* CollectionReusableView.swift */; };
 		273CA188276F112C00758AA4 /* ShopViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273CA187276F112C00758AA4 /* ShopViewCell.swift */; };
 		275B1A7A277886DD0031F523 /* AddShopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B1A79277886DD0031F523 /* AddShopVC.swift */; };
-		275B1A7C2778A72E0031F523 /* AddProfessionalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B1A7B2778A72E0031F523 /* AddProfessionalVC.swift */; };
+		275B1A7C2778A72E0031F523 /* ControlShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B1A7B2778A72E0031F523 /* ControlShop.swift */; };
 		275F5A9C277C57A400819973 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275F5A9B277C57A400819973 /* ProfileVC.swift */; };
 		2777747127744C6C00356B3A /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2777747027744C6C00356B3A /* MainVC.swift */; };
 		2777747327744CB100356B3A /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2777747227744CB100356B3A /* SignUpVC.swift */; };
 		27777475277460B400356B3A /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27777474277460B400356B3A /* LogInVC.swift */; };
-		277774782774896000356B3A /* DismissKyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277774772774896000356B3A /* DismissKyboard.swift */; };
+		277774782774896000356B3A /* UIViewConrtrller+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277774772774896000356B3A /* UIViewConrtrller+Ext.swift */; };
+		277EC0A527846E1A00F93B18 /* ReceivingOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277EC0A427846E1A00F93B18 /* ReceivingOrders.swift */; };
 		278209132766205100F493FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278209122766205100F493FE /* AppDelegate.swift */; };
 		278209152766205100F493FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278209142766205100F493FE /* SceneDelegate.swift */; };
 		278209172766205100F493FE /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278209162766205100F493FE /* HomeVC.swift */; };
@@ -40,15 +44,19 @@
 
 /* Begin PBXFileReference section */
 		2710D5122770619500797ED9 /* ShowShopCollViCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowShopCollViCell.swift; sourceTree = "<group>"; };
+		2721B0D127819BE70038EEA2 /* SendRequestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendRequestVC.swift; sourceTree = "<group>"; };
+		2721B0D42782E2640038EEA2 /* OrdersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersVC.swift; sourceTree = "<group>"; };
+		2721B0D62782E3190038EEA2 /* OrdersCollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersCollCell.swift; sourceTree = "<group>"; };
 		273098A42767715B00ABE3F0 /* CollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionReusableView.swift; sourceTree = "<group>"; };
 		273CA187276F112C00758AA4 /* ShopViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewCell.swift; sourceTree = "<group>"; };
 		275B1A79277886DD0031F523 /* AddShopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShopVC.swift; sourceTree = "<group>"; };
-		275B1A7B2778A72E0031F523 /* AddProfessionalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfessionalVC.swift; sourceTree = "<group>"; };
+		275B1A7B2778A72E0031F523 /* ControlShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlShop.swift; sourceTree = "<group>"; };
 		275F5A9B277C57A400819973 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		2777747027744C6C00356B3A /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		2777747227744CB100356B3A /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		27777474277460B400356B3A /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
-		277774772774896000356B3A /* DismissKyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissKyboard.swift; sourceTree = "<group>"; };
+		277774772774896000356B3A /* UIViewConrtrller+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewConrtrller+Ext.swift"; sourceTree = "<group>"; };
+		277EC0A427846E1A00F93B18 /* ReceivingOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivingOrders.swift; sourceTree = "<group>"; };
 		2782090F2766205100F493FE /* HouseFix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HouseFix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		278209122766205100F493FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		278209142766205100F493FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +66,7 @@
 		2782091E2766205200F493FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		278209202766205200F493FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27A0ECC2277B1F6C000BE3E8 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		27D46C5827857A4500B5C471 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		27D473F02774A28200CCBF73 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		27E06781276F5D9C007490BB /* ShowShopsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowShopsVC.swift; sourceTree = "<group>"; };
 		27E54605276B747F0062B45A /* SectionsControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsControl.swift; sourceTree = "<group>"; };
@@ -83,13 +92,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		277774762774893600356B3A /* Extension */ = {
+		2721B0D32781B2410038EEA2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				277774772774896000356B3A /* DismissKyboard.swift */,
 				27A0ECC2277B1F6C000BE3E8 /* Utilities.swift */,
+				277774762774893600356B3A /* Extensions */,
 			);
-			path = Extension;
+			path = Common;
+			sourceTree = "<group>";
+		};
+		277774762774893600356B3A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				277774772774896000356B3A /* UIViewConrtrller+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		278209062766205100F493FE = {
@@ -111,7 +128,7 @@
 		278209112766205100F493FE /* HouseFix */ = {
 			isa = PBXGroup;
 			children = (
-				277774762774893600356B3A /* Extension */,
+				2721B0D32781B2410038EEA2 /* Common */,
 				278209292766207A00F493FE /* Model */,
 				278209282766207400F493FE /* Controller */,
 				278209272766206D00F493FE /* View */,
@@ -144,6 +161,9 @@
 		278209282766207400F493FE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2777747027744C6C00356B3A /* MainVC.swift */,
+				275B1A7B2778A72E0031F523 /* ControlShop.swift */,
+				2721B0D127819BE70038EEA2 /* SendRequestVC.swift */,
 				275B1A79277886DD0031F523 /* AddShopVC.swift */,
 				2777747227744CB100356B3A /* SignUpVC.swift */,
 				27777474277460B400356B3A /* LogInVC.swift */,
@@ -151,6 +171,7 @@
 				27E54605276B747F0062B45A /* SectionsControl.swift */,
 				27E06781276F5D9C007490BB /* ShowShopsVC.swift */,
 				275F5A9B277C57A400819973 /* ProfileVC.swift */,
+				2721B0D42782E2640038EEA2 /* OrdersVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -159,13 +180,13 @@
 			isa = PBXGroup;
 			children = (
 				27F8817A276A0EDB0086F8C0 /* HomeCellCollection.swift */,
-				2777747027744C6C00356B3A /* MainVC.swift */,
 				27E54607276B75BD0062B45A /* Sections.swift */,
 				273098A42767715B00ABE3F0 /* CollectionReusableView.swift */,
 				273CA187276F112C00758AA4 /* ShopViewCell.swift */,
 				2710D5122770619500797ED9 /* ShowShopCollViCell.swift */,
-				275B1A7B2778A72E0031F523 /* AddProfessionalVC.swift */,
 				27FBDE5A2779D776002A0431 /* PhotoShopViewCell.swift */,
+				2721B0D62782E3190038EEA2 /* OrdersCollCell.swift */,
+				277EC0A427846E1A00F93B18 /* ReceivingOrders.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,6 +240,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 278209062766205100F493FE;
 			packageReferences = (
@@ -255,19 +277,23 @@
 			files = (
 				27E06782276F5D9C007490BB /* ShowShopsVC.swift in Sources */,
 				275B1A7A277886DD0031F523 /* AddShopVC.swift in Sources */,
+				277EC0A527846E1A00F93B18 /* ReceivingOrders.swift in Sources */,
 				27E54608276B75BD0062B45A /* Sections.swift in Sources */,
 				275F5A9C277C57A400819973 /* ProfileVC.swift in Sources */,
+				2721B0D52782E2640038EEA2 /* OrdersVC.swift in Sources */,
 				27777475277460B400356B3A /* LogInVC.swift in Sources */,
 				27FBDE5B2779D776002A0431 /* PhotoShopViewCell.swift in Sources */,
 				278209172766205100F493FE /* HomeVC.swift in Sources */,
+				2721B0D72782E3190038EEA2 /* OrdersCollCell.swift in Sources */,
 				27A0ECC3277B1F6C000BE3E8 /* Utilities.swift in Sources */,
 				273CA188276F112C00758AA4 /* ShopViewCell.swift in Sources */,
 				2777747327744CB100356B3A /* SignUpVC.swift in Sources */,
+				2721B0D227819BE70038EEA2 /* SendRequestVC.swift in Sources */,
 				2777747127744C6C00356B3A /* MainVC.swift in Sources */,
 				27E54606276B747F0062B45A /* SectionsControl.swift in Sources */,
-				275B1A7C2778A72E0031F523 /* AddProfessionalVC.swift in Sources */,
+				275B1A7C2778A72E0031F523 /* ControlShop.swift in Sources */,
 				2710D5132770619500797ED9 /* ShowShopCollViCell.swift in Sources */,
-				277774782774896000356B3A /* DismissKyboard.swift in Sources */,
+				277774782774896000356B3A /* UIViewConrtrller+Ext.swift in Sources */,
 				273098A52767715B00ABE3F0 /* CollectionReusableView.swift in Sources */,
 				278209132766205100F493FE /* AppDelegate.swift in Sources */,
 				27F8817B276A0EDB0086F8C0 /* HomeCellCollection.swift in Sources */,
@@ -282,6 +308,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				278209192766205100F493FE /* Base */,
+				27D46C5827857A4500B5C471 /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -301,6 +328,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -362,6 +390,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
