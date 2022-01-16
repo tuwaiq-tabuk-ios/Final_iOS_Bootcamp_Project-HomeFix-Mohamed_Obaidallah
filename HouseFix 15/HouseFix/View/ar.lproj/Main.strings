@@ -1,0 +1,138 @@
+
+/* Class = "UITextField"; placeholder = "Shop Name / Your Name"; ObjectID = "0ei-5Z-pmV"; */
+"0ei-5Z-pmV.placeholder" = "اسم المحل / اسمك";
+
+/* Class = "UIButton"; normalTitle = "Update"; ObjectID = "0u4-OF-4fF"; */
+"0u4-OF-4fF.normalTitle" = "تحديث";
+
+/* Class = "UITextField"; placeholder = "Contact Number"; ObjectID = "2BC-zh-XLP"; */
+"2BC-zh-XLP.placeholder" = "رقم الاتصال";
+
+/* Class = "UILabel"; text = "Profile"; ObjectID = "2or-gk-mTc"; */
+"2or-gk-mTc.text" = "الملف الشخصي";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "5G8-eg-dXU"; */
+"5G8-eg-dXU.title" = "رجوع";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "5hT-yH-kg2"; */
+"5hT-yH-kg2.title" = "الملف الشخصي";
+
+/* Class = "UIButton"; normalTitle = "Send Recust"; ObjectID = "7kV-xL-xN4"; */
+"7kV-xL-xN4.normalTitle" = "ارسل طلب";
+
+/* Class = "UINavigationItem"; title = "House Fix"; ObjectID = "8Lb-uj-9cx"; */
+"8Lb-uj-9cx.title" = "House Fix";
+
+/* Class = "UIButton"; normalTitle = "Delete"; ObjectID = "9wx-gG-CiT"; */
+"9wx-gG-CiT.normalTitle" = "حذف";
+
+/* Class = "UITextField"; placeholder = "Choose The Type of Shop"; ObjectID = "AhS-PG-tBc"; */
+"AhS-PG-tBc.placeholder" = "اختر نوع المتجر";
+
+/* Class = "UITextField"; placeholder = "City"; ObjectID = "BhR-HX-f2S"; */
+"BhR-HX-f2S.placeholder" = "مدينه";
+
+/* Class = "UILabel"; text = "Dyeing"; ObjectID = "CLa-TR-m1O"; */
+"CLa-TR-m1O.text" = "Dyeing";
+
+/* Class = "UITabBarItem"; title = "Orders"; ObjectID = "Ebl-zq-Dcz"; */
+"Ebl-zq-Dcz.title" = "الطلب";
+
+/* Class = "UITextField"; placeholder = "Phone number"; ObjectID = "Eo6-ga-U13"; */
+"Eo6-ga-U13.placeholder" = "رقم الجوال";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "FDC-kT-eCB"; */
+"FDC-kT-eCB.title" = "رجوع";
+
+/* Class = "UILabel"; text = "Lebol"; ObjectID = "GTU-hq-ShT"; */
+"GTU-hq-ShT.text" = "Lebol";
+
+/* Class = "UITextField"; placeholder = "Last Name"; ObjectID = "HA1-S1-dht"; */
+"HA1-S1-dht.placeholder" = "اسم العائلة";
+
+/* Class = "UIButton"; normalTitle = "Log In"; ObjectID = "JDI-TI-LGF"; */
+"JDI-TI-LGF.normalTitle" = "تسجيل الدخول";
+
+/* Class = "UIButton"; normalTitle = "SignUP"; ObjectID = "Keu-sb-pDI"; */
+"Keu-sb-pDI.normalTitle" = "اشتراك";
+
+/* Class = "UILabel"; text = "Plumber"; ObjectID = "MA4-Xl-Ri6"; */
+"MA4-Xl-Ri6.text" = "Plumber";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "NDD-pQ-XUh"; */
+"NDD-pQ-XUh.normalTitle" = "إرسال";
+
+/* Class = "UIButton"; normalTitle = "Correct Account"; ObjectID = "Qzw-gd-4zD"; */
+"Qzw-gd-4zD.normalTitle" = "Correct Account";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "SHr-NH-jEb"; */
+"SHr-NH-jEb.placeholder" = "Password";
+
+/* Class = "UITextField"; placeholder = "Description"; ObjectID = "Uk4-uZ-Egq"; */
+"Uk4-uZ-Egq.placeholder" = "وصف";
+
+/* Class = "UIButton"; normalTitle = "Sign UP"; ObjectID = "VCf-jS-Yg7"; */
+"VCf-jS-Yg7.normalTitle" = "اشتراك";
+
+/* Class = "UILabel"; text = "Building"; ObjectID = "VHd-ui-kWj"; */
+"VHd-ui-kWj.text" = "Building";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "WFO-iv-IzM"; */
+"WFO-iv-IzM.placeholder" = "Email";
+
+/* Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "XIg-rR-uKZ"; */
+"XIg-rR-uKZ.placeholder" = "رقم الجوال";
+
+/* Class = "UITextField"; placeholder = "First Name"; ObjectID = "ZH9-Ca-ycC"; */
+"ZH9-Ca-ycC.placeholder" = "الاسم الاول";
+
+/* Class = "UIButton"; normalTitle = "Log out"; ObjectID = "aQl-rm-91Z"; */
+"aQl-rm-91Z.normalTitle" = "تسجيل خروج";
+
+/* Class = "UITextField"; placeholder = "Account Type"; ObjectID = "b1v-BR-gYt"; */
+"b1v-BR-gYt.placeholder" = "نوع الحساب";
+
+/* Class = "UITextField"; placeholder = "Shop Location / Link"; ObjectID = "bWG-bF-Tv7"; */
+"bWG-bF-Tv7.placeholder" = "موقع المتجر / الرابط";
+
+/* Class = "UIButton"; normalTitle = "Log Out"; ObjectID = "c2H-da-reb"; */
+"c2H-da-reb.normalTitle" = "تسجيل خروج";
+
+/* Class = "UIButton"; normalTitle = "Add a shop picture, click here"; ObjectID = "d3Z-Pd-uB2"; */
+"d3Z-Pd-uB2.normalTitle" = "أضف صورة متجر ، انقر هنا";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "fah-iQ-tmo"; */
+"fah-iQ-tmo.title" = "Home";
+
+/* Class = "UILabel"; text = "Electrical"; ObjectID = "fxQ-wf-yiq"; */
+"fxQ-wf-yiq.text" = "Electrical";
+
+/* Class = "UILabel"; text = "Send Request"; ObjectID = "iex-ua-PRd"; */
+"iex-ua-PRd.text" = "ارسل طلب";
+
+/* Class = "UITextField"; placeholder = "Description"; ObjectID = "jWv-st-a6A"; */
+"jWv-st-a6A.placeholder" = "وصف الحاله";
+
+/* Class = "UIButton"; normalTitle = "do you have an account ? LogIn"; ObjectID = "kmq-LD-l6s"; */
+"kmq-LD-l6s.normalTitle" = "هل لديك حساب ؟ تسجيل الدخول";
+
+/* Class = "UITextField"; placeholder = "password"; ObjectID = "or2-pE-zs3"; */
+"or2-pE-zs3.placeholder" = "password";
+
+/* Class = "UIButton"; normalTitle = "To Add More Photo, click Here"; ObjectID = "spa-K6-CcA"; */
+"spa-K6-CcA.normalTitle" = "لإضافة المزيد من الصور ، انقر هنا";
+
+/* Class = "UIButton"; normalTitle = "LogIn"; ObjectID = "sya-7i-lxu"; */
+"sya-7i-lxu.normalTitle" = "تسجبل دخول";
+
+/* Class = "UIButton"; normalTitle = "Update"; ObjectID = "va4-4l-nXz"; */
+"va4-4l-nXz.normalTitle" = "تحديث";
+
+/* Class = "UILabel"; text = "Profile"; ObjectID = "wqK-wZ-t3Y"; */
+"wqK-wZ-t3Y.text" = "ملف شخصي";
+
+/* Class = "UITextField"; placeholder = "Email: xxxxx@xxxx.com"; ObjectID = "xT5-bd-6UL"; */
+"xT5-bd-6UL.placeholder" = "Email: xxxxx@xxxx.com";
+
+/* Class = "UIButton"; normalTitle = "SEND"; ObjectID = "xtZ-i5-xmL"; */
+"xtZ-i5-xmL.normalTitle" = "إرسال";
