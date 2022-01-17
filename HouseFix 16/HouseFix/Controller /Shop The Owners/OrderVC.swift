@@ -10,8 +10,8 @@ import Firebase
 import FirebaseAuth
 
 class OrderVC: UIViewController ,
-                UICollectionViewDelegate ,
-                UICollectionViewDataSource {
+               UICollectionViewDelegate ,
+               UICollectionViewDataSource {
   
   
   var receivingOrders : [ReceivingOrders] = [ReceivingOrders]()
@@ -33,7 +33,7 @@ class OrderVC: UIViewController ,
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    getData()
+    getData1()
   }
   
   
@@ -41,16 +41,27 @@ class OrderVC: UIViewController ,
   
   @IBAction func deleteRequestTouch(_ sender: UIButton) {
     
-    let index = sender.tag
-    let db = Firestore.firestore()
-  
-    db.collection("order")
-      .document(receivingOrders[index].id)
-      .delete()
-
-    receivingOrders.remove(at: index)
-    orderCollct.reloadData()
+//    let index = sender.tag
+//    let db = Firestore.firestore()
+//
+//    //    db.collection("order")
+//    //      .document(receivingOrders[index].id)
+//    //      .delete()
+//
+//    db.collection("order")
+//      .document(receivingOrders[index].id)
+//      .updateData( ["id": FieldValue.delete()])
+//
+//    receivingOrders.remove(at: index)
+//    orderCollct.reloadData()
     
+    
+    let index = sender.tag
+       let ind = receivingOrders.firstIndex(of: receivingOrders[index])
+       let db = Firestore.firestore()
+    db.collection("orders").document(receivingOrders[index].id).delete()
+    receivingOrders.remove(at: ind!)
+    orderCollct.reloadData()
   }
   
   
@@ -70,7 +81,7 @@ class OrderVC: UIViewController ,
     
     cell.imageOrder
       .sd_setImage(with: URL(string: receivingOrders[indexPath.row].image),
-                                placeholderImage: UIImage(named: "Image"))
+                   placeholderImage: UIImage(named: "Image"))
     
     cell.lblPhoneNum.text = receivingOrders[indexPath.row].phoneNum
     cell.lblDescription.text = receivingOrders[indexPath.row].description
@@ -119,7 +130,6 @@ class OrderVC: UIViewController ,
                         phoneNum : data["phoneNumTextField"] as! String,
                         id: data["id"] as! String)
                       
-                      print("~~~reque:\(reque)")
                       receivingOrders.append(reque)
                       orderCollct.reloadData()
                     }
@@ -132,4 +142,47 @@ class OrderVC: UIViewController ,
       }
   }
   
+  func getData1(){
+    
+    
+    let db = Firestore.firestore()
+    let userID = Auth.auth().currentUser?.uid
+    
+    db.collection("stores")
+      .document(userID!)
+      .collection("store")
+      .getDocuments { snapshot, error in
+        guard error == nil else {return}
+        guard let document = snapshot?.documents else {return}
+        for documentSnapshot in document {
+          let id = documentSnapshot.documentID
+          db.collection("order")
+            .whereField("id", isEqualTo: id)
+            .addSnapshotListener { (querySnapshot, error) in
+              if let error = error {
+                print("There was problem of getting data. \(error)")
+              } else {
+                
+                self.receivingOrders = []
+                for document in snapshot!.documents {
+                  let data = document.data()
+                  self.receivingOrders.append(
+                    ReceivingOrders(
+                      image : data["imgRequest"] as? String ?? "",
+                      description : data["descrptionTextField"] as? String ?? "",
+                      phoneNum : data["phoneNumTextField"] as? String ?? "",
+                      id: data["id"] as? String ?? "")
+                  )}
+                DispatchQueue.main.async {
+                  self.orderCollct.reloadData()
+                }
+              }
+            }
+        }
+      }
+    
+  }
+  
 }
+
+

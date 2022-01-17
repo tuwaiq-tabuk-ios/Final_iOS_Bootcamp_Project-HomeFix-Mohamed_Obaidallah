@@ -53,13 +53,16 @@ class SendRequestVC: UIViewController {
     
     let db = Firestore.firestore()
     let auth = Auth.auth().currentUser!
-    let ID = UUID().uuidString
+    let iD = UUID().uuidString
+    let ref = db.collection("order").document()
+    
     db.collection("order")
       .document(dataRrquest.id)
       .setData([auth.uid:[
                   "phoneNumTextField" : self.phoneNumTextField.text!,
                   "descrptionTextField" : self.descrptionTextField.text!,
-                  "id" : dataRrquest.id]], merge: true)
+                  "id" : iD ]], merge: true)
+    
     
     let storage = Storage.storage()
     

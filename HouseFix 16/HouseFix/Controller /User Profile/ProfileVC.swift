@@ -44,8 +44,7 @@ class ProfileVC: UIViewController {
     let db = Firestore.firestore()
     let userID = Auth.auth().currentUser?.uid
     
-    Auth.auth().currentUser?.updateEmail(to: emailPro.text!,
-                                         completion: { error in
+    Auth.auth().currentUser?.updateEmail(to: emailPro.text!, completion: { error in
       if error != nil {
         print("Error Update Email: \(String(describing: error?.localizedDescription))")
       } else {
@@ -68,10 +67,11 @@ class ProfileVC: UIViewController {
     let db = Firestore.firestore()
     if let user = Auth.auth().currentUser{
       let id = user.uid
-      db.collection("users").document(id).getDocument(completion: { result,
-                                                                    error in
+      db.collection("users").document(id).getDocument(completion: { result, error in
         if error != nil{
-          print("~~ Error:\(String(describing: error?.localizedDescription))")
+          
+          print("Error:\(String(describing: error?.localizedDescription))")
+          
         }else{
           if let data = result?.data(){
             self.firstNameProfile.text = data["firstName"] as? String
@@ -88,7 +88,7 @@ class ProfileVC: UIViewController {
   func logout(){
     
     let Storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let vc = Storyboard.instantiateViewController(identifier: "LogIn")
+    let vc = Storyboard.instantiateViewController(identifier: "GoToHouseFixVC")
     vc.modalPresentationStyle = .overFullScreen
     present(vc , animated: true)
   }

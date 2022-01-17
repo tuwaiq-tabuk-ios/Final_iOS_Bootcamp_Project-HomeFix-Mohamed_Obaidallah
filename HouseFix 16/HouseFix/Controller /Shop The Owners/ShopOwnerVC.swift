@@ -45,7 +45,7 @@ class ShopOwnerVC: UIViewController {
   @IBAction func logoutButPressed(_ sender: Any) {
     
     let Storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let vc = Storyboard.instantiateViewController(identifier: "LogIn")
+    let vc = Storyboard.instantiateViewController(identifier: "GoToHouseFixVC")
     vc.modalPresentationStyle = .overFullScreen
     present(vc , animated: true)
   }
