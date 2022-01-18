@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2710D5132770619500797ED9 /* ShowShopCollViCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710D5122770619500797ED9 /* ShowShopCollViCell.swift */; };
+		271E49F82795DB66002D8AAF /* FSCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271E49F72795DB66002D8AAF /* FSCollectionReference.swift */; };
 		2721B0D227819BE70038EEA2 /* SendRequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2721B0D127819BE70038EEA2 /* SendRequestVC.swift */; };
 		2721B0D72782E3190038EEA2 /* OrdersCollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2721B0D62782E3190038EEA2 /* OrdersCollCell.swift */; };
 		273CA188276F112C00758AA4 /* ShopViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273CA187276F112C00758AA4 /* ShopViewCell.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		2710D5122770619500797ED9 /* ShowShopCollViCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowShopCollViCell.swift; sourceTree = "<group>"; };
+		271E49F72795DB66002D8AAF /* FSCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCollectionReference.swift; sourceTree = "<group>"; };
 		2721B0D127819BE70038EEA2 /* SendRequestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendRequestVC.swift; sourceTree = "<group>"; };
 		2721B0D62782E3190038EEA2 /* OrdersCollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersCollCell.swift; sourceTree = "<group>"; };
 		273CA187276F112C00758AA4 /* ShopViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewCell.swift; sourceTree = "<group>"; };
@@ -90,6 +92,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		271E49F92795DB9B002D8AAF /* Manager_Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				271E49F72795DB66002D8AAF /* FSCollectionReference.swift */,
+			);
+			path = Manager_Helpers;
+			sourceTree = "<group>";
+		};
 		2721B0D32781B2410038EEA2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +136,7 @@
 		278209112766205100F493FE /* HouseFix */ = {
 			isa = PBXGroup;
 			children = (
+				271E49F92795DB9B002D8AAF /* Manager_Helpers */,
 				278209292766207A00F493FE /* Model */,
 				27A69DB227940C2C00EE318B /* Controller  */,
 				278209272766206D00F493FE /* View */,
@@ -337,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27E06782276F5D9C007490BB /* ShowShopsVC.swift in Sources */,
+				271E49F82795DB66002D8AAF /* FSCollectionReference.swift in Sources */,
 				275B1A7A277886DD0031F523 /* AddShopVC.swift in Sources */,
 				277EC0A527846E1A00F93B18 /* ReceivingOrders.swift in Sources */,
 				27E54608276B75BD0062B45A /* Sections.swift in Sources */,

@@ -3,7 +3,7 @@
 "0ei-5Z-pmV.placeholder" = "اسم المحل / اسمك";
 
 /* Class = "UIButton"; normalTitle = "Update"; ObjectID = "0u4-OF-4fF"; */
-"0u4-OF-4fF.normalTitle" = "تحديث";
+"0u4-OF-4fF.normalTitle" = "تحديث ";
 
 /* Class = "UITextField"; placeholder = "Contact Number"; ObjectID = "2BC-zh-XLP"; */
 "2BC-zh-XLP.placeholder" = "رقم الاتصال";
@@ -63,10 +63,10 @@
 "NDD-pQ-XUh.normalTitle" = "إرسال";
 
 /* Class = "UIButton"; normalTitle = "Correct Account"; ObjectID = "Qzw-gd-4zD"; */
-"Qzw-gd-4zD.normalTitle" = "Correct Account";
+"Qzw-gd-4zD.normalTitle" = "أنشاء حساب جديد";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "SHr-NH-jEb"; */
-"SHr-NH-jEb.placeholder" = "Password";
+"SHr-NH-jEb.placeholder" = "كلمة المرور";
 
 /* Class = "UITextField"; placeholder = "Description"; ObjectID = "Uk4-uZ-Egq"; */
 "Uk4-uZ-Egq.placeholder" = "وصف";
@@ -78,7 +78,7 @@
 "VHd-ui-kWj.text" = "Building";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "WFO-iv-IzM"; */
-"WFO-iv-IzM.placeholder" = "Email";
+"WFO-iv-IzM.placeholder" = "ايميل";
 
 /* Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "XIg-rR-uKZ"; */
 "XIg-rR-uKZ.placeholder" = "رقم الجوال";
@@ -102,7 +102,7 @@
 "d3Z-Pd-uB2.normalTitle" = "أضف صورة متجر ، انقر هنا";
 
 /* Class = "UITabBarItem"; title = "Home"; ObjectID = "fah-iQ-tmo"; */
-"fah-iQ-tmo.title" = "Home";
+"fah-iQ-tmo.title" = "الرئسية";
 
 /* Class = "UILabel"; text = "Electrical"; ObjectID = "fxQ-wf-yiq"; */
 "fxQ-wf-yiq.text" = "Electrical";
@@ -117,7 +117,7 @@
 "kmq-LD-l6s.normalTitle" = "هل لديك حساب ؟ تسجيل الدخول";
 
 /* Class = "UITextField"; placeholder = "password"; ObjectID = "or2-pE-zs3"; */
-"or2-pE-zs3.placeholder" = "password";
+"or2-pE-zs3.placeholder" = "كلمة المرور";
 
 /* Class = "UIButton"; normalTitle = "To Add More Photo, click Here"; ObjectID = "spa-K6-CcA"; */
 "spa-K6-CcA.normalTitle" = "لإضافة المزيد من الصور ، انقر هنا";
@@ -129,7 +129,7 @@
 "va4-4l-nXz.normalTitle" = "تحديث";
 
 /* Class = "UILabel"; text = "Profile"; ObjectID = "wqK-wZ-t3Y"; */
-"wqK-wZ-t3Y.text" = "ملف شخصي";
+"wqK-wZ-t3Y.text" = " الملف الشخصي";
 
 /* Class = "UITextField"; placeholder = "Email: xxxxx@xxxx.com"; ObjectID = "xT5-bd-6UL"; */
 "xT5-bd-6UL.placeholder" = "Email: xxxxx@xxxx.com";

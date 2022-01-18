@@ -24,6 +24,7 @@ struct Shop {
   var phoneNumber: String
   var cities: String
   var type: String
+ 
 }
 
 var shops: [Shop] = [Shop]()

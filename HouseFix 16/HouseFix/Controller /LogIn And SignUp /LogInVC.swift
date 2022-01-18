@@ -70,8 +70,9 @@ class LogInVC: UIViewController {
   
   func logIn(email:String,password:String) {
     
-    Auth.auth().signIn(withEmail: email,
-                       password: password) { authResult, err in
+    Auth.auth()
+      .signIn(withEmail: email,
+              password: password) { authResult, err in
       if let error = err {
         
         let alert = UIAlertController(title: "Ops!",
@@ -86,13 +87,12 @@ class LogInVC: UIViewController {
         self.present(alert, animated: true, completion: nil)
         
       } else {
-        let db = Firestore.firestore()
         
         UserDefaults.standard.setValue(email, forKey: "email")
         UserDefaults.standard.setValue(password, forKey: "password")
         UserDefaults.standard.synchronize()
         
-        db.collection("users")
+        getFSCollectionReference(.users)
           .document((authResult?
                       .user.uid)!)
           .getDocument { document, error in
