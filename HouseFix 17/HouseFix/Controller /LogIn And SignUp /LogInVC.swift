@@ -37,30 +37,21 @@ class LogInVC: UIViewController {
         passwoedTextField.text?
         .trimmingCharacters(in: .whitespacesAndNewlines) == ""
     {
-      let alert = UIAlertController(title: "Ops!",
-                                    message: "Please Fill all the fileds",
-                                    preferredStyle: .alert)
-      
-      let action = UIAlertAction(title: "Ok",
-                                 style: .cancel,
-                                 handler: nil)
-      
-      alert.addAction(action)
-      present(alert, animated: true, completion: nil)
+      showAlertMessage(title: "Ops!",
+                               message:"Please Fill all the fileds")
       
     } else {
       
       logIn(email: emailTextField.text!,
             password: passwoedTextField.text!)
-      
     }
   }
-  
+ 
   
   // go to the SignUp page
   @IBAction func cercteAccountTapped(_ sender: Any) {
     let Storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let vc = Storyboard.instantiateViewController(identifier: "SignUp")
+    let vc = Storyboard.instantiateViewController(identifier: "Go_To_SignUp")
     vc.modalPresentationStyle = .overFullScreen
     present(vc , animated: true)
   }
@@ -68,24 +59,16 @@ class LogInVC: UIViewController {
   
   // MARK: - Method
   
-  func logIn(email:String,password:String) {
+  func logIn(email:String,
+             password:String) {
     
     Auth.auth()
       .signIn(withEmail: email,
-              password: password) { authResult, err in
+              password: password) { authDataResult, err in
       if let error = err {
         
-        let alert = UIAlertController(title: "Ops!",
-                                      message: error.localizedDescription,
-                                      preferredStyle: .alert)
-        
-        let action = UIAlertAction(title: "Ok",
-                                   style: .cancel,
-                                   handler: nil)
-        
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
-        
+        self.showAlertMessage(title: "Ops!",
+                                 message: error.localizedDescription)
       } else {
         
         UserDefaults.standard.setValue(email, forKey: "email")
@@ -93,7 +76,7 @@ class LogInVC: UIViewController {
         UserDefaults.standard.synchronize()
         
         getFSCollectionReference(.users)
-          .document((authResult?
+          .document((authDataResult?
                       .user.uid)!)
           .getDocument { document, error in
             
@@ -105,12 +88,12 @@ class LogInVC: UIViewController {
               let Storyboard = UIStoryboard(name: "Main", bundle: nil)
               var vc:UIViewController!
               if data["accountType"] as! String == "User"{
-                vc = Storyboard.instantiateViewController(identifier: "mainUser")
+                vc = Storyboard.instantiateViewController(identifier: "Go_To_UserPage")
               } else {
                 if data["hasStore"] as! Bool {
-                  vc = Storyboard.instantiateViewController(identifier: "mainOrder")
+                  vc = Storyboard.instantiateViewController(identifier: "Go_To_OrderPage")
                 } else {
-                  vc = Storyboard.instantiateViewController(identifier: "mainShop")
+                  vc = Storyboard.instantiateViewController(identifier: "Go_To_MainShop")
                 }
               }
               

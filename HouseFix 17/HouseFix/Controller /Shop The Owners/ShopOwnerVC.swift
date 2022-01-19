@@ -55,18 +55,20 @@ class ShopOwnerVC: UIViewController {
   
   func updataProfile() {
     
-    let db = Firestore.firestore()
     let userID = Auth.auth().currentUser?.uid
     
-    Auth.auth().currentUser?.updateEmail(to: emailProfile.text!,
-                                         completion: { error in
+    Auth
+      .auth()
+      .currentUser?
+      .updateEmail(to: emailProfile.text!, completion: { error in
       if error != nil {
         print("Error Update Email: \(String(describing: error?.localizedDescription))")
       } else {
         UserDefaults.standard.setValue(self.emailProfile.text!,
                                        forKey: "email")
         UserDefaults.standard.synchronize()
-        db.collection("users").document(userID!).setData([
+        getFSCollectionReference(.users)
+          .document(userID!).setData([
           "firstName": self.firstNameProfile.text!,
           "lastName": self.lastNameProfile.text!,
           "phoneNumber": self.phoneNumProfile.text!,
@@ -80,13 +82,11 @@ class ShopOwnerVC: UIViewController {
   
   func saveProfile () {
     
-    let db = Firestore.firestore()
     if let user = Auth.auth().currentUser{
       let id = user.uid
-      db.collection("users")
+      getFSCollectionReference(.users)
         .document(id)
-        .getDocument(completion: { result,
-                                   error in
+        .getDocument(completion: { result,error in
         if error != nil{
           
           print("~~ Error:\(String(describing: error?.localizedDescription))")

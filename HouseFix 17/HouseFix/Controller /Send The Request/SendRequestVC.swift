@@ -50,25 +50,19 @@ class SendRequestVC: UIViewController {
   // MARK: - Method
   
   func sandRequest() {
-    
-    let db = Firestore.firestore()
+  
     let auth = Auth.auth().currentUser!
-    let iD = UUID().uuidString
-    let ref = db.collection("order").document()
+    let storage = Storage.storage()
+    var imageID = UUID().uuidString
+    let uploadMetaData = StorageMetadata()
     
-    db.collection("order")
+    getFSCollectionReference(.order)
       .document(dataRrquest.id)
       .setData([auth.uid:[
                   "phoneNumTextField" : self.phoneNumTextField.text!,
                   "descrptionTextField" : self.descrptionTextField.text!,
-                  "id" : iD ]], merge: true)
+                  "id" : dataRrquest.id ]], merge: true)
     
-    
-    let storage = Storage.storage()
-    
-    var imageID = UUID().uuidString
-    
-    let uploadMetaData = StorageMetadata()
     uploadMetaData.contentType = "image/jpeg"
     
     let logoImage = self.imageRequest.image?
@@ -80,7 +74,8 @@ class SendRequestVC: UIViewController {
       .child(auth.uid)
       .child(imageID)
     
-    storageRF.putData(logoImage!, metadata:uploadMetaData) {
+    storageRF.putData(logoImage!,
+                      metadata:uploadMetaData) {
       metadata, error in
       
       guard error == nil else {
@@ -91,7 +86,7 @@ class SendRequestVC: UIViewController {
         if error != nil {
         } else {
           
-          db.collection("order")
+          getFSCollectionReference(.order)
             .document(self.dataRrquest.id)
             .setData([auth.uid:[ "imgRequest" : url?.absoluteString]],
                      merge: true)
@@ -103,7 +98,7 @@ class SendRequestVC: UIViewController {
           let action = UIAlertAction(title: "Ok",
                                      style: .cancel) { action in
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "mainUser")
+            let vc = storyboard.instantiateViewController(identifier: "Go_To_UserPage")
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc , animated: true)
           }

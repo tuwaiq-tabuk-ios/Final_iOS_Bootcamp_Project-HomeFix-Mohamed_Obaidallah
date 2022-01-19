@@ -12,7 +12,7 @@
         <!--Navigation Controller-->
         <scene sceneID="UGH-oL-U5B">
             <objects>
-                <navigationController storyboardIdentifier="mainUser" automaticallyAdjustsScrollViewInsets="NO" id="kPr-tb-WXx" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Go_To_UserPage" automaticallyAdjustsScrollViewInsets="NO" id="kPr-tb-WXx" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ifw-fE-gwQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -104,7 +104,7 @@
         <!--LogIn_VC-->
         <scene sceneID="qe2-0C-ehR">
             <objects>
-                <viewController storyboardIdentifier="LogIn" id="btz-YD-aFN" userLabel="LogIn_VC" customClass="LogInVC" customModule="HouseFix" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Go_To_LogIn" id="btz-YD-aFN" userLabel="LogIn_VC" customClass="LogInVC" customModule="HouseFix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c4u-g9-oXk" userLabel="Root_View">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -185,7 +185,7 @@
         <!--SignUp_VC-->
         <scene sceneID="iAn-4c-Gtt">
             <objects>
-                <viewController storyboardIdentifier="SignUp" id="vCj-xQ-Gi0" userLabel="SignUp_VC" customClass="SignUpVC" customModule="HouseFix" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Go_To_SignUp" id="vCj-xQ-Gi0" userLabel="SignUp_VC" customClass="SignUpVC" customModule="HouseFix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="70O-IS-yVp" userLabel="Root_View">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -317,7 +317,7 @@
         <!--AddShopVC-->
         <scene sceneID="C8Y-Q5-Nd2">
             <objects>
-                <viewController storyboardIdentifier="mainShop" id="jfy-KR-Dnw" userLabel="AddShopVC" customClass="AddShopVC" customModule="HouseFix" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Go_To_MainShop" id="jfy-KR-Dnw" userLabel="AddShopVC" customClass="AddShopVC" customModule="HouseFix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2P5-Wf-Saa" userLabel="Root_View">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -851,7 +851,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <state key="normal" title="Update"/>
                                 <connections>
-                                    <action selector="UpdateTouch:" destination="Lsa-Xb-yx8" eventType="touchUpInside" id="mOC-vh-P3N"/>
+                                    <action selector="updateProfileTouch:" destination="Lsa-Xb-yx8" eventType="touchUpInside" id="mOC-vh-P3N"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -891,11 +891,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="5hT-yH-kg2"/>
                     <connections>
-                        <outlet property="emailPro" destination="Gik-HB-kCq" id="lsK-Dy-MOY"/>
+                        <outlet property="emailProfile" destination="Gik-HB-kCq" id="lsK-Dy-MOY"/>
                         <outlet property="firstNameProfile" destination="sfA-ip-zhI" id="Eoe-oV-BPj"/>
-                        <outlet property="lastNamePro" destination="eJK-lJ-dBu" id="V1W-Yk-pa5"/>
+                        <outlet property="lastNameProfile" destination="eJK-lJ-dBu" id="V1W-Yk-pa5"/>
                         <outlet property="logoutButton" destination="aQl-rm-91Z" id="xMo-Dm-cBa"/>
-                        <outlet property="phoneNumPro" destination="9ea-xM-773" id="E3n-SQ-Vkv"/>
+                        <outlet property="phoneNumProfile" destination="9ea-xM-773" id="E3n-SQ-Vkv"/>
                         <outlet property="updateButton" destination="0u4-OF-4fF" id="vId-2V-Ksn"/>
                     </connections>
                 </viewController>
@@ -1627,18 +1627,18 @@
                                             <constraint firstAttribute="trailing" secondItem="7kV-xL-xN4" secondAttribute="trailing" constant="70" id="CPY-4u-ZaG"/>
                                             <constraint firstItem="CqK-kp-QVk" firstAttribute="leading" secondItem="ayN-u4-Niv" secondAttribute="leading" id="JMK-bO-yr0"/>
                                             <constraint firstItem="Sta-bc-IHL" firstAttribute="leading" secondItem="ayN-u4-Niv" secondAttribute="leading" constant="10" id="Jm3-O6-kaf"/>
-                                            <constraint firstItem="OOI-1H-tOn" firstAttribute="top" secondItem="VS6-5R-acN" secondAttribute="bottom" constant="25" id="KJr-L6-mFK"/>
                                             <constraint firstItem="bfA-Ea-kFq" firstAttribute="leading" secondItem="ayN-u4-Niv" secondAttribute="leading" constant="8" id="NW9-fU-nEi"/>
-                                            <constraint firstAttribute="trailing" secondItem="OOI-1H-tOn" secondAttribute="trailing" constant="10" id="Otp-ae-aNV"/>
+                                            <constraint firstItem="OOI-1H-tOn" firstAttribute="top" secondItem="VS6-5R-acN" secondAttribute="bottom" constant="25" id="PhV-jd-Bng"/>
                                             <constraint firstAttribute="trailing" secondItem="CqK-kp-QVk" secondAttribute="trailing" id="Ps4-Yn-6Tv"/>
                                             <constraint firstItem="Sta-bc-IHL" firstAttribute="top" secondItem="VS6-5R-acN" secondAttribute="bottom" constant="25" id="Pza-AR-758"/>
                                             <constraint firstAttribute="trailing" secondItem="d85-XO-2Ze" secondAttribute="trailing" constant="10" id="Rwk-jS-7UK"/>
                                             <constraint firstItem="CqK-kp-QVk" firstAttribute="top" secondItem="d85-XO-2Ze" secondAttribute="bottom" constant="20" id="V1u-e9-xam"/>
-                                            <constraint firstItem="OOI-1H-tOn" firstAttribute="leading" secondItem="ayN-u4-Niv" secondAttribute="leading" constant="10" id="VQn-WI-cIu"/>
                                             <constraint firstItem="d85-XO-2Ze" firstAttribute="leading" secondItem="ayN-u4-Niv" secondAttribute="leading" constant="10" id="WVj-5N-Yf0"/>
+                                            <constraint firstItem="7kV-xL-xN4" firstAttribute="top" secondItem="OOI-1H-tOn" secondAttribute="bottom" constant="100" id="YPa-ZC-QLD"/>
+                                            <constraint firstItem="OOI-1H-tOn" firstAttribute="leading" secondItem="ayN-u4-Niv" secondAttribute="leading" constant="10" id="Zff-1n-hLH"/>
                                             <constraint firstItem="7kV-xL-xN4" firstAttribute="top" secondItem="Sta-bc-IHL" secondAttribute="bottom" constant="100" id="ai9-co-VGA"/>
-                                            <constraint firstItem="7kV-xL-xN4" firstAttribute="top" secondItem="OOI-1H-tOn" secondAttribute="bottom" constant="100" id="cfe-VR-hya"/>
                                             <constraint firstAttribute="trailing" secondItem="bfA-Ea-kFq" secondAttribute="trailing" constant="8" id="jAg-Cz-174"/>
+                                            <constraint firstAttribute="trailing" secondItem="OOI-1H-tOn" secondAttribute="trailing" constant="10" id="jHQ-wx-rvv"/>
                                             <constraint firstItem="VS6-5R-acN" firstAttribute="top" secondItem="bfA-Ea-kFq" secondAttribute="bottom" constant="5" id="loZ-Ez-fsw"/>
                                             <constraint firstItem="VS6-5R-acN" firstAttribute="leading" secondItem="ayN-u4-Niv" secondAttribute="leading" constant="8" id="miX-66-bd4"/>
                                             <constraint firstAttribute="trailing" secondItem="VS6-5R-acN" secondAttribute="trailing" constant="8" id="rQE-U3-8ag"/>
@@ -1709,7 +1709,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="EoT-F4-wY3">
             <objects>
-                <tabBarController storyboardIdentifier="mainOrder" automaticallyAdjustsScrollViewInsets="NO" id="7Gw-pA-gG6" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Go_To_OrderPage" automaticallyAdjustsScrollViewInsets="NO" id="7Gw-pA-gG6" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JmJ-F2-CU7">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

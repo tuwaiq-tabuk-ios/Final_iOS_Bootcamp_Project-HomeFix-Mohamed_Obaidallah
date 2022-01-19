@@ -42,11 +42,11 @@ class HomeVC: UIViewController {
   }
   
   
-  // MARK: -
+  // MARK: - When you click on any of the sections, the stores inside it will appear
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     switch segue.identifier {
-      
+    
     case "shopElectrical":
       if let vc = segue.destination as? SectionsVC {
         var arrayNew:[Shop] = [Shop]()
@@ -102,7 +102,6 @@ class HomeVC: UIViewController {
   func getDataFS() {
     
     let db = Firestore.firestore()
-    let auth = Auth.auth().currentUser
     let collectionRF:CollectionReference = db.collection("sections")
     
     collectionRF.getDocuments { snapshot, error in
@@ -169,20 +168,20 @@ extension HomeVC : UICollectionViewDelegate,
   
   
   func collectionView(_ collectionView:
-                      UICollectionView,
+                        UICollectionView,
                       numberOfItemsInSection
-                      section: Int) -> Int {
+                        section: Int) -> Int {
     
     return logoImage.count
   }
   
   
   func collectionView(_ collectionView:
-                      UICollectionView,
+                        UICollectionView,
                       cellForItemAt indexPath:
-                      IndexPath) -> UICollectionViewCell {
+                        IndexPath) -> UICollectionViewCell {
     let cell =
-    collectionView
+      collectionView
       .dequeueReusableCell(
         withReuseIdentifier: "homeCell",
         for: indexPath) as! HomeCellCollection

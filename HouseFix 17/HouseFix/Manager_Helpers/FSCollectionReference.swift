@@ -10,7 +10,7 @@ import FirebaseFirestore
  
  
 enum FSCollectionReference: String {
-  case users
+  case users , order , stores , sections , store
 }
  
 func getFSCollectionReference(

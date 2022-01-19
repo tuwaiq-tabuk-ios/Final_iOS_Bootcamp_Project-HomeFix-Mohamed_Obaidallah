@@ -54,7 +54,7 @@
 "JDI-TI-LGF.normalTitle" = "تسجيل الدخول";
 
 /* Class = "UIButton"; normalTitle = "SignUP"; ObjectID = "Keu-sb-pDI"; */
-"Keu-sb-pDI.normalTitle" = "اشتراك";
+"Keu-sb-pDI.normalTitle" = "انشاء حساب جديد";
 
 /* Class = "UILabel"; text = "Plumber"; ObjectID = "MA4-Xl-Ri6"; */
 "MA4-Xl-Ri6.text" = "Plumber";

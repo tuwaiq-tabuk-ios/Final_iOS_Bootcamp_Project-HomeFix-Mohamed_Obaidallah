@@ -108,7 +108,7 @@ class AddShopVC: UIViewController,
   
   
   // MARK: - Method 
-  func submitButtonSave(){
+  func submitButtonSave() {
     
     let db = Firestore.firestore()
     let auth = Auth.auth().currentUser
@@ -142,7 +142,6 @@ class AddShopVC: UIViewController,
     }
     
     let database = db.collection("sections").document(type!)
-    let id = database.documentID
     
     database.setData(["\(imageFolderID)": [
       "shopNameTextField" :
@@ -273,21 +272,21 @@ class AddShopVC: UIViewController,
     }
     
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let vc = storyboard.instantiateViewController(identifier: "mainOrder")
+    let vc = storyboard.instantiateViewController(identifier: "Go_To_OrderPage")
     vc.modalPresentationStyle = .overFullScreen
     
     present(vc , animated: true)
+    
   }
   
   
   func addShopFS() {
     
-    let db = Firestore.firestore()
     let auth = Auth.auth().currentUser!
     var id = ""
     
     
-    db.collection("users")
+    getFSCollectionReference(.users)
       .document(auth.uid)
       .getDocument { snapshot, error in
         if error != nil {
@@ -315,7 +314,7 @@ class AddShopVC: UIViewController,
                 
                 
                 var dataDoc = [String:Any]()
-                db.collection("sections")
+                getFSCollectionReference(.sections)
                   .document(self.typeOld)
                   .getDocument { snapshot, error in
                     if error != nil {
