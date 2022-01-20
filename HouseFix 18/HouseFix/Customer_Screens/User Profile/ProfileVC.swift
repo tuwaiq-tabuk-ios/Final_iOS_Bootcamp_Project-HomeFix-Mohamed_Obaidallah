@@ -108,6 +108,7 @@ class ProfileVC: UIViewController {
   
   func setUpElements(){
     Utilities.styleFilledButton(updateButton)
+    Utilities.styleFilledButton(logoutButton)
     Utilities.styleTextField(firstNameProfile)
     Utilities.styleTextField(lastNameProfile)
     Utilities.styleTextField(emailProfile)

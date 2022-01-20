@@ -30,7 +30,7 @@ class ShowShopsVC: UIViewController {
   
   var showShops : Shop! {
     didSet {
-      navigationItem.title = showShops.name
+      navigationItem.title = showShops.shopName
     }
   }
   
@@ -46,7 +46,7 @@ class ShowShopsVC: UIViewController {
   
   
   override func viewWillAppear(_ animated: Bool) {
-    nameShop.text = showShops.name
+    nameShop.text = showShops.shopName
     shopAddresses.text = showShops.description
     phoneNumberLabel.text = showShops.phoneNumber
     
@@ -82,7 +82,7 @@ class ShowShopsVC: UIViewController {
     
   }
   @objc func nextImage(){
-    if currnetCellIndex < showShops.photo.count - 1 {
+    if currnetCellIndex < showShops.shopPhoto.count - 1 {
       currnetCellIndex += 1
     }else{
       currnetCellIndex = 0
@@ -94,7 +94,7 @@ class ShowShopsVC: UIViewController {
                                 animated: true)
   }
   
- 
+  
 }
 
 
@@ -109,7 +109,7 @@ extension ShowShopsVC : UICollectionViewDelegate,
   
   func collectionView(_ collectionView: UICollectionView,
                       numberOfItemsInSection section: Int) -> Int {
-    return showShops.photo.count
+    return showShops.shopPhoto.count
   }
   
   
@@ -118,8 +118,8 @@ extension ShowShopsVC : UICollectionViewDelegate,
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "showImagesCell",
                                                   for: indexPath) as! ShowShopCollViCell
     
-    cell.imageShopsMove.sd_setImage(with: URL(string: showShops.photo[indexPath.row]),
-                                  placeholderImage: UIImage(named: "home"))
+    cell.imageShopsMove.sd_setImage(with: URL(string: showShops.shopPhoto[indexPath.row]),
+                                    placeholderImage: UIImage(named: "home"))
     
     return cell
   }

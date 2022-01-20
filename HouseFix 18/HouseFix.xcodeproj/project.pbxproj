@@ -138,7 +138,7 @@
 			children = (
 				271E49F92795DB9B002D8AAF /* Manager_Helpers */,
 				278209292766207A00F493FE /* Model */,
-				27A69DB227940C2C00EE318B /* Controller  */,
+				27A69DB227940C2C00EE318B /* Customer_Screens */,
 				278209272766206D00F493FE /* View */,
 				2721B0D32781B2410038EEA2 /* Common */,
 				278209262766206900F493FE /* Support */,
@@ -167,16 +167,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		278209282766207400F493FE /* LogIn And SignUp  */ = {
-			isa = PBXGroup;
-			children = (
-				2777747027744C6C00356B3A /* MainVC.swift */,
-				2777747227744CB100356B3A /* SignUpVC.swift */,
-				27777474277460B400356B3A /* LogInVC.swift */,
-			);
-			path = "LogIn And SignUp ";
-			sourceTree = "<group>";
-		};
 		278209292766207A00F493FE /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +174,15 @@
 				27E54607276B75BD0062B45A /* Sections.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2799F5B22798744A006B57C6 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				27777474277460B400356B3A /* LogInVC.swift */,
+				2777747227744CB100356B3A /* SignUpVC.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		27A69DAB2794039400EE318B /* Send The Request */ = {
@@ -215,6 +214,7 @@
 		27A69DAE2794062E00EE318B /* The Main Interface */ = {
 			isa = PBXGroup;
 			children = (
+				2777747027744C6C00356B3A /* MainVC.swift */,
 				27F8817A276A0EDB0086F8C0 /* HomeCellCollection.swift */,
 				278209162766205100F493FE /* HomeVC.swift */,
 			);
@@ -248,10 +248,10 @@
 			path = "Add Stores";
 			sourceTree = "<group>";
 		};
-		27A69DB227940C2C00EE318B /* Controller  */ = {
+		27A69DB227940C2C00EE318B /* Customer_Screens */ = {
 			isa = PBXGroup;
 			children = (
-				278209282766207400F493FE /* LogIn And SignUp  */,
+				2799F5B22798744A006B57C6 /* Authentication */,
 				27A69DAB2794039400EE318B /* Send The Request */,
 				27A69DAC2794043F00EE318B /* Shop The Owners */,
 				27A69DAD279405F000EE318B /* User Profile */,
@@ -260,7 +260,7 @@
 				27A69DB02794079B00EE318B /* Show Shops And Details */,
 				27A69DB12794084100EE318B /* Add Stores */,
 			);
-			path = "Controller ";
+			path = Customer_Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
