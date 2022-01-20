@@ -35,7 +35,7 @@ class SignUpVC: UIViewController {
   @IBOutlet weak var passwordConfirmationTF: UITextField!
   
   
-  // View Controller lifecycle
+  // MARK: - View Controller lifecycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -61,7 +61,7 @@ class SignUpVC: UIViewController {
   //Go to the LogIn page
   @IBAction func userHaveAccountTapped(_ sender: Any) {
     let Storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let vc = Storyboard.instantiateViewController(identifier: "LogIn")
+    let vc = Storyboard.instantiateViewController(identifier: "Go_To_LogIn")
     vc.modalPresentationStyle = .overFullScreen
     present(vc , animated: true)
   }
@@ -85,45 +85,29 @@ class SignUpVC: UIViewController {
         .trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
         phoneNumberTextField.text?
         .trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-      let alert = UIAlertController(title: "Ops!",
-                                    message: "Please Fill all the fileds",
-                                    preferredStyle: .alert)
-      
-      let action = UIAlertAction(title: "Ok",
-                                 style: .cancel,
-                                 handler: nil)
-      
-      alert.addAction(action)
-      present(alert, animated: true, completion: nil)
+
+      showAlertMessage(title: "Ops!",
+                               message: "Please Fill all the fileds")
         
     }
+    
     if passwordTextField.text != passwordConfirmationTF.text {
-        
-        let alert = UIAlertController(title: "Ops!",
-                                      message: "Password does not match",
-                                      preferredStyle: .alert)
-        
-        let action = UIAlertAction(title: "Ok",
-                                   style: .cancel,
-                                   handler: nil)
-        
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
-          }
- 
-       else {
-        
+      
+      showAlertMessage(title: "Ops!",
+                               message: "Password does not match")
+      
+          } else {
         Auth
           .auth()
           .createUser(withEmail: emailTextField.text!,
-                      password: passwordTextField.text!) { result, error in
+                      password: passwordTextField.text!) { authDataResult, error in
             if error != nil {
               print("error createUser: \(String(describing: error?.localizedDescription))")
               
             } else {
               
-              getFSCollectionReference(.users)
-                .document((result?.user.uid)!)
+              getFSCollectionReference(FSCollectionReference.users)
+                .document((authDataResult?.user.uid)!)
                 .setData (
                 ["firstName" : self.firstNameTextField.text!,
                  "lastName" : self.lastNameTextField.text!,
@@ -139,11 +123,11 @@ class SignUpVC: UIViewController {
                   let Storyboard = UIStoryboard(name: "Main", bundle: nil)
                   var vc:UIViewController!
                   if self.accountTypeTextField.text! == "User" {
-                    vc = Storyboard.instantiateViewController(identifier: "mainUser")
+                    vc = Storyboard.instantiateViewController(identifier: "Go_To_UserPage")
                   } else if self.accountTypeTextField.text! == "Add a Shop" {
-                    vc = Storyboard.instantiateViewController(identifier: "mainShop")
+                    vc = Storyboard.instantiateViewController(identifier: "Go_To_MainShop")
                   } else {
-                    vc = Storyboard.instantiateViewController(identifier: "mainShop")
+                    vc = Storyboard.instantiateViewController(identifier: "Go_To_MainShop")
                   }
                   vc.modalPresentationStyle = .overFullScreen
                   self.present(vc , animated: true)
