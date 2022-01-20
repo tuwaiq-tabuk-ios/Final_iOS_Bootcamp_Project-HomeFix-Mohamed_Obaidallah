@@ -101,10 +101,12 @@ class HomeVC: UIViewController {
   
   func getDataFS() {
     
-    let db = Firestore.firestore()
-    let collectionRF:CollectionReference = db.collection("sections")
-    
-    collectionRF.getDocuments { snapshot, error in
+   // let db = Firestore.firestore()
+   // let collectionRF:CollectionReference = db.collection("sections")
+//    getFSCollectionReference(FSCollectionReference.sections).getDocuments
+    getFSCollectionReference(.sections)
+      .getDocuments { snapshot, error in
+        
       if error != nil {
         
       } else {
@@ -115,14 +117,22 @@ class HomeVC: UIViewController {
           for (key,value) in datas {
             let data = value as! Dictionary<String,Any>
             let shop = Shop(id: key,
-                            name: data["shopNameTextField"] as! String,
-                            logo: data["logo"] as! String,
-                            photo: data["images"] as! Array,
-                            description: data["descriptionTextField"] as! String,
-                            locationLinktextField: data["locationLinktextField"] as! String,
-                            phoneNumber: data["phoneNumberTextField"] as! String,
-                            cities: data["cityTextField"] as! String,
-                            type: data["typeShopTextField"] as! String)
+                            shopName:
+                              data["shopNameTextField"] as! String,
+                            logo:
+                              data["logo"] as! String,
+                            shopPhoto:
+                              data["images"] as! Array,
+                            description:
+                              data["descriptionTextField"] as! String,
+                            locationLinktextField:
+                              data["locationLinktextField"] as! String,
+                            phoneNumber:
+                              data["phoneNumberTextField"] as! String,
+                            cities:
+                              data["cityTextField"] as! String,
+                            type:
+                              data["typeShopTextField"] as! String)
             
             shops.append(shop)
             

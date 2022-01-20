@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yr3-bN-Ckv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yr3-bN-Ckv">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -350,10 +351,10 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="dMJ-sk-nUz" firstAttribute="leading" secondItem="NYM-KK-MKT" secondAttribute="leading" id="2N2-uw-ofl"/>
-                                                <constraint firstItem="dMJ-sk-nUz" firstAttribute="top" secondItem="NYM-KK-MKT" secondAttribute="top" id="T3e-Z9-Hhd"/>
-                                                <constraint firstAttribute="bottom" secondItem="dMJ-sk-nUz" secondAttribute="bottom" id="dH1-Oy-ufF"/>
-                                                <constraint firstAttribute="trailing" secondItem="dMJ-sk-nUz" secondAttribute="trailing" id="oBR-Es-G0F"/>
+                                                <constraint firstItem="dMJ-sk-nUz" firstAttribute="leading" secondItem="NYM-KK-MKT" secondAttribute="leading" id="NGs-fB-vgo"/>
+                                                <constraint firstAttribute="trailing" secondItem="dMJ-sk-nUz" secondAttribute="trailing" id="Q7d-9H-TYY"/>
+                                                <constraint firstItem="dMJ-sk-nUz" firstAttribute="top" secondItem="NYM-KK-MKT" secondAttribute="top" id="yb0-CY-e63"/>
+                                                <constraint firstAttribute="bottom" secondItem="dMJ-sk-nUz" secondAttribute="bottom" id="ymd-z9-2Bq"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="290" height="151"/>
@@ -415,7 +416,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDD-pQ-XUh">
-                                <rect key="frame" x="95" y="758" width="224" height="44"/>
+                                <rect key="frame" x="95" y="759" width="224" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="iEN-za-T0j"/>
                                 </constraints>
@@ -444,6 +445,7 @@
                             <constraint firstItem="AhS-PG-tBc" firstAttribute="leading" secondItem="rPT-yY-N8Z" secondAttribute="leading" constant="20" id="Cwd-Fo-fHo"/>
                             <constraint firstItem="JbU-Ki-gOI" firstAttribute="top" secondItem="d3Z-Pd-uB2" secondAttribute="bottom" constant="7" id="DMy-cB-ari"/>
                             <constraint firstItem="Eo6-ga-U13" firstAttribute="leading" secondItem="rPT-yY-N8Z" secondAttribute="leading" constant="20" id="FAT-5l-Xso"/>
+                            <constraint firstItem="rPT-yY-N8Z" firstAttribute="bottom" secondItem="NDD-pQ-XUh" secondAttribute="bottom" constant="10" id="IDh-Tl-Ftw"/>
                             <constraint firstItem="d3Z-Pd-uB2" firstAttribute="top" secondItem="rPT-yY-N8Z" secondAttribute="top" constant="6" id="K7k-6L-mub"/>
                             <constraint firstItem="JbU-Ki-gOI" firstAttribute="leading" secondItem="rPT-yY-N8Z" secondAttribute="leading" constant="60" id="KHD-JE-obj"/>
                             <constraint firstItem="Uk4-uZ-Egq" firstAttribute="leading" secondItem="rPT-yY-N8Z" secondAttribute="leading" constant="20" id="KXh-CB-o5O"/>
@@ -457,7 +459,6 @@
                             <constraint firstItem="rPT-yY-N8Z" firstAttribute="trailing" secondItem="bWG-bF-Tv7" secondAttribute="trailing" constant="20" id="dBy-Ka-ZnU"/>
                             <constraint firstItem="YOC-Ua-w03" firstAttribute="top" secondItem="spa-K6-CcA" secondAttribute="bottom" constant="5" id="eOI-eg-Fm9"/>
                             <constraint firstItem="Eo6-ga-U13" firstAttribute="top" secondItem="Uk4-uZ-Egq" secondAttribute="bottom" constant="8" id="glI-MK-KRC"/>
-                            <constraint firstItem="NDD-pQ-XUh" firstAttribute="top" secondItem="AhS-PG-tBc" secondAttribute="bottom" constant="50" id="hPE-gm-4S4"/>
                             <constraint firstItem="0ei-5Z-pmV" firstAttribute="top" secondItem="YOC-Ua-w03" secondAttribute="bottom" constant="20" id="kDD-u2-A3U"/>
                             <constraint firstAttribute="trailing" secondItem="9Am-xb-FYl" secondAttribute="trailing" id="lSy-AO-ttz"/>
                             <constraint firstItem="spa-K6-CcA" firstAttribute="top" secondItem="JbU-Ki-gOI" secondAttribute="bottom" constant="6" id="lWp-IF-4L8"/>
@@ -617,10 +618,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="person.circle" catalog="system" id="M6h-ip-Od1"/>
                     <connections>
-                        <outlet property="buttonLogout" destination="c2H-da-reb" id="pQb-zg-ekK"/>
                         <outlet property="emailProfile" destination="2Ze-sH-oV8" id="6pB-0G-5qg"/>
                         <outlet property="firstNameProfile" destination="fgx-Wr-I8e" id="9GW-HC-T7z"/>
                         <outlet property="lastNameProfile" destination="R7C-o6-b53" id="J33-Ts-I5e"/>
+                        <outlet property="logoutButton" destination="c2H-da-reb" id="pQb-zg-ekK"/>
                         <outlet property="phoneNumProfile" destination="iRD-WM-L5e" id="hln-Ae-5TK"/>
                         <outlet property="updatButton" destination="va4-4l-nXz" id="AC0-WU-xbA"/>
                     </connections>

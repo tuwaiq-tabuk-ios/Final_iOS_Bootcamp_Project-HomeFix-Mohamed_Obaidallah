@@ -64,10 +64,13 @@ class AddShopVC: UIViewController,
     
     collectionVI.delegate = self
     collectionVI.dataSource = self
+    
     pickerSection.dataSource = self
     pickerSection.delegate = self
+    
     pickerCitys.dataSource = self
     pickerCitys.delegate = self
+    
     typeShopTextField.delegate = self
     
     let db = Firestore.firestore()
@@ -107,7 +110,8 @@ class AddShopVC: UIViewController,
   }
   
   
-  // MARK: - Method 
+  // MARK: - Method
+  
   func submitButtonSave() {
     
     let db = Firestore.firestore()
@@ -282,11 +286,12 @@ class AddShopVC: UIViewController,
   
   func addShopFS() {
     
+    let db = Firestore.firestore()
     let auth = Auth.auth().currentUser!
     var id = ""
     
     
-    getFSCollectionReference(.users)
+    db.collection("users")
       .document(auth.uid)
       .getDocument { snapshot, error in
         if error != nil {
@@ -314,7 +319,7 @@ class AddShopVC: UIViewController,
                 
                 
                 var dataDoc = [String:Any]()
-                getFSCollectionReference(.sections)
+                db.collection("sections")
                   .document(self.typeOld)
                   .getDocument { snapshot, error in
                     if error != nil {

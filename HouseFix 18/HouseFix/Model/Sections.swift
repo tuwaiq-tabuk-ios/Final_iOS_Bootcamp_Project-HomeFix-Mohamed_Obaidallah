@@ -16,9 +16,9 @@ enum shopType {
 
 struct Shop {
   var id: String
-  var name: String
+  var shopName: String
   var logo: String
-  var photo: [String]
+  var shopPhoto: [String]
   var description: String
   var locationLinktextField: String
   var phoneNumber: String

@@ -52,7 +52,7 @@ class SectionsVC : UIViewController,
     
     cell.imageShop.sd_setImage(with: URL(string: Shops[indexPath.row].logo),
                                 placeholderImage: UIImage(named: "home"))
-    cell.name.text = Shops[indexPath.row].name
+    cell.name.text = Shops[indexPath.row].shopName
     cell.descriptionShop.text = Shops[indexPath.row].cities
     
     return cell

@@ -19,7 +19,7 @@ class ShopOwnerVC: UIViewController {
   @IBOutlet weak var lastNameProfile: UITextField!
   @IBOutlet weak var emailProfile: UITextField!
   @IBOutlet weak var phoneNumProfile: UITextField!
-  @IBOutlet weak var buttonLogout: UIButton!
+  @IBOutlet weak var logoutButton: UIButton!
   @IBOutlet weak var updatButton: UIButton!
  
   
@@ -110,6 +110,7 @@ class ShopOwnerVC: UIViewController {
   
   func setUpElements(){
     Utilities.styleFilledButton(updatButton)
+    Utilities.styleFilledButton(logoutButton)
     Utilities.styleTextField(firstNameProfile)
     Utilities.styleTextField(lastNameProfile)
     Utilities.styleTextField(emailProfile)
