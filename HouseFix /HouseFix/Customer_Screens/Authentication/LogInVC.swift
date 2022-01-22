@@ -34,7 +34,7 @@ class LogInVC: UIViewController {
     // Verify Data Entry And Show a Message to The User
     if emailTextField.text?
         .trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-        passwoedTextField.text?
+       passwoedTextField.text?
         .trimmingCharacters(in: .whitespacesAndNewlines) == ""
     {
       showAlertMessage(title: "Ops!",
@@ -66,7 +66,6 @@ class LogInVC: UIViewController {
       .signIn(withEmail: email,
               password: password) { authDataResult, err in
       if let error = err {
-        
         self.showAlertMessage(title: "Ops!",
                                  message: error.localizedDescription)
       } else {

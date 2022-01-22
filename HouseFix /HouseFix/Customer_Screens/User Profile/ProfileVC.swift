@@ -94,6 +94,8 @@ class ProfileVC: UIViewController {
         ], merge: true)
       }
     })
+    showAlertMessage(title: "Done!",
+                     message: "Your data has been updated")
   }
   
   

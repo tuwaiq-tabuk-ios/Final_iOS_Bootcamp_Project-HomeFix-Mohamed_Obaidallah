@@ -30,10 +30,21 @@ class SendRequestVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     hideKeyboardWhenTappedAround()
     Utilities.styleFilledButton(sendButtion)
+    
   }
-  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+//    func prepare(for segue: UIStoryboardSegue,
+//                          sender: Any?) {
+//      if let vc = segue.destination as? ProfileVC {
+//        vc.phoneNumProfile.text = phoneNumTextField.text
+//      }
+//    }
+  }
   
   // MARK: - IBAction
   
@@ -52,15 +63,17 @@ class SendRequestVC: UIViewController {
   func sandRequest() {
   
     let auth = Auth.auth().currentUser!
+    let ref = getFSCollectionReference(.order).document()
     let storage = Storage.storage()
     var imageID = UUID().uuidString
     let uploadMetaData = StorageMetadata()
-    
+
     getFSCollectionReference(.order)
       .document(dataRrquest.id)
       .setData([auth.uid:[
-                  "phoneNumTextField" : self.phoneNumTextField.text!,
-                  "descrptionTextField" : self.descrptionTextField.text!,
+                  "phoneNumTextField" : self.phoneNumTextField.text ?? "",
+                  "descrptionTextField" : self.descrptionTextField.text ?? "",
+                  "docID"        : ref.documentID,
                   "id" : dataRrquest.id ]], merge: true)
     
     uploadMetaData.contentType = "image/jpeg"
@@ -108,6 +121,9 @@ class SendRequestVC: UIViewController {
       }
     }
   }
+  
+  
+
   
 }
 

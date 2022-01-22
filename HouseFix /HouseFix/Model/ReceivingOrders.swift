@@ -9,15 +9,7 @@ import UIKit
 
 class ReceivingOrders : Equatable {
   
-  static func == (lhs: ReceivingOrders,
-                  rhs: ReceivingOrders)-> Bool{
-    
-    return lhs.image == rhs.image
-      && lhs.description == rhs.description
-      && lhs.phoneNum == rhs.phoneNum
-      && lhs.id == rhs.id
-  }
-  
+
   var image : String
   var description : String
   var phoneNum : String
@@ -33,6 +25,17 @@ class ReceivingOrders : Equatable {
     self.phoneNum = phoneNum
     self.id = id
   }
+  
+  
+  static func == (lhs: ReceivingOrders,
+                  rhs: ReceivingOrders)-> Bool{
+    
+    return lhs.image == rhs.image
+      && lhs.description == rhs.description
+      && lhs.phoneNum == rhs.phoneNum
+      && lhs.id == rhs.id
+  }
+  
   
 }
 
