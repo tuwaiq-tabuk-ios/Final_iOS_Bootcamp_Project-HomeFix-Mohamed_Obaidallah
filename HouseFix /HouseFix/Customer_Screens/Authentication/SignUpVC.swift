@@ -72,31 +72,22 @@ class SignUpVC: UIViewController {
   private func signUp() {
     
     if emailTextField.text?
-        .trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-        passwordTextField.text?
-        .trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-        passwordConfirmationTF.text?
-        .trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-        firstNameTextField.text?
-        .trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-        lastNameTextField.text?
-        .trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-        accountTypeTextField.text?
-        .trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-        phoneNumberTextField.text?
+        .trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTextField.text?
+        .trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordConfirmationTF.text?
+        .trimmingCharacters(in: .whitespacesAndNewlines) == "" || firstNameTextField.text?
+        .trimmingCharacters(in: .whitespacesAndNewlines) == "" || lastNameTextField.text?
+        .trimmingCharacters(in: .whitespacesAndNewlines) == "" || accountTypeTextField.text?
+        .trimmingCharacters(in: .whitespacesAndNewlines) == "" || phoneNumberTextField.text?
         .trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-      
       showAlertMessage(title: "Ops!",
                        message: "Please Fill all the fileds")
-      
     }
-    
     if passwordTextField.text != passwordConfirmationTF.text {
       
       showAlertMessage(title: "Ops!",
                        message: "Password does not match")
-      
     } else {
+      
       Auth
         .auth()
         .createUser(withEmail: emailTextField.text!,
@@ -109,10 +100,10 @@ class SignUpVC: UIViewController {
             getFSCollectionReference(FSCollectionReference.users)
               .document((authDataResult?.user.uid)!)
               .setData (
-                ["firstName" : self.firstNameTextField.text!,
-                 "lastName" : self.lastNameTextField.text!,
-                 "accountType" : self.accountTypeTextField.text!,
-                 "phoneNumber" : self.phoneNumberTextField.text!,
+                ["firstName" : self.firstNameTextField.text ?? "",
+                 "lastName" : self.lastNameTextField.text ?? "",
+                 "accountType" : self.accountTypeTextField.text ?? "",
+                 "phoneNumber" : self.phoneNumberTextField.text ?? "",
                  "hasStore" : false,
                 ]) { error in
                   if error != nil {
@@ -120,8 +111,11 @@ class SignUpVC: UIViewController {
                     print("error add User to database: \(String(describing: error?.localizedDescription))")
                   } else {
                     // Specify the account type to show the interface for data entry
+                    
                     let Storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    
                     var vc:UIViewController!
+                    
                     if self.accountTypeTextField.text! == "User" {
                       vc = Storyboard.instantiateViewController(identifier: "Go_To_UserPage")
                     } else if self.accountTypeTextField.text! == "Add a Shop" {

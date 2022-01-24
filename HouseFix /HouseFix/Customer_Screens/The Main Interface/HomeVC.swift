@@ -101,9 +101,6 @@ class HomeVC: UIViewController {
   
   func getDataFS() {
     
-   // let db = Firestore.firestore()
-   // let collectionRF:CollectionReference = db.collection("sections")
-//    getFSCollectionReference(FSCollectionReference.sections).getDocuments
     getFSCollectionReference(.sections)
       .getDocuments { snapshot, error in
         

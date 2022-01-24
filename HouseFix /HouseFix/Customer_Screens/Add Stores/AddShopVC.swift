@@ -36,7 +36,7 @@ class AddShopVC: UIViewController,
   var toolBarCitys: UIToolbar!
   var ID: String!
   var typeOld: String!
-  var collectionRF:CollectionReference!
+  var collectionRF: CollectionReference!
   
   
   // MARK: - Outlets
