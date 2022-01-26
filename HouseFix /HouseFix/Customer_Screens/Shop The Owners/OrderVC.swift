@@ -42,13 +42,11 @@ class OrderVC: UIViewController ,
   @IBAction func deleteRequestTouch(_ sender: UIButton) {
     
     let index = sender.tag
-    let ind = receivingOrders.firstIndex(of: receivingOrders[index])
-    
+   
     getFSCollectionReference(.order)
       .document(receivingOrders[index].id)
       .delete()
-    
-    receivingOrders.remove(at: ind!)
+  
     orderCollct.reloadData()
   }
   

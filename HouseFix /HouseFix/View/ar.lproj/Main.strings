@@ -24,7 +24,7 @@
 "8Lb-uj-9cx.title" = "House Fix";
 
 /* Class = "UIButton"; normalTitle = "Delete"; ObjectID = "9wx-gG-CiT"; */
-"9wx-gG-CiT.normalTitle" = "حذف";
+"9wx-gG-CiT.normalTitle" = "حذف جميع الطلبات";
 
 /* Class = "UITextField"; placeholder = "Choose The Type of Shop"; ObjectID = "AhS-PG-tBc"; */
 "AhS-PG-tBc.placeholder" = "اختر نوع المتجر";
