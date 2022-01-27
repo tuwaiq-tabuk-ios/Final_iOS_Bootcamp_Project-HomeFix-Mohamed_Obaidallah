@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yr3-bN-Ckv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yr3-bN-Ckv">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -143,7 +145,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="43U-8P-Bzt"/>
                                 </constraints>
-                                <state key="normal" title="Create a new account"/>
+                                <state key="normal" title="Create a new account">
+                                    <color key="titleColor" systemColor="linkColor"/>
+                                </state>
                                 <connections>
                                     <action selector="cercteAccountTapped:" destination="btz-YD-aFN" eventType="touchUpInside" id="56I-VW-cl8"/>
                                 </connections>
@@ -250,7 +254,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmq-LD-l6s">
                                 <rect key="frame" x="20" y="599" width="374" height="30"/>
-                                <state key="normal" title="do you have an account ? LogIn"/>
+                                <state key="normal" title="do you have an account ? LogIn">
+                                    <color key="titleColor" systemColor="linkColor"/>
+                                </state>
                                 <connections>
                                     <action selector="userHaveAccountTapped:" destination="vCj-xQ-Gi0" eventType="touchUpInside" id="kX0-m1-U20"/>
                                 </connections>
@@ -345,7 +351,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="151"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dMJ-sk-nUz" userLabel="Image_View">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dMJ-sk-nUz" userLabel="Image_View">
                                                     <rect key="frame" x="0.0" y="0.0" width="390" height="151"/>
                                                 </imageView>
                                             </subviews>
@@ -404,7 +410,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eo6-ga-U13">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="+966" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eo6-ga-U13">
                                 <rect key="frame" x="20" y="544" width="374" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
@@ -502,10 +508,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2H-da-reb">
-                                <rect key="frame" x="100" y="738" width="214" height="40"/>
+                                <rect key="frame" x="100" y="728" width="214" height="50"/>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.34509804840000002" blue="0.13333332540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="lDD-XQ-LDx"/>
+                                    <constraint firstAttribute="height" constant="50" id="lDD-XQ-LDx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="30"/>
                                 <state key="normal" title="Log Out">
@@ -781,10 +787,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQl-rm-91Z" userLabel="Logout_Button">
-                                <rect key="frame" x="75" y="511" width="264" height="50"/>
+                                <rect key="frame" x="75" y="511" width="264" height="62"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Tq0-6N-oJY"/>
+                                    <constraint firstAttribute="height" constant="62" id="Tq0-6N-oJY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Log out">
@@ -1496,7 +1502,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kle-Pe-B0f">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" name="BrandAccentColor"/>
+                        <color key="barTintColor" name="BrandAccentColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="lbD-tJ-pAx" kind="relationship" relationship="viewControllers" id="byX-YQ-iex"/>
@@ -1631,7 +1638,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kV-xL-xN4">
                                                 <rect key="frame" x="70" y="581" width="180" height="44"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                                <state key="normal" title="Send Recust">
+                                                <state key="normal" title="Send Reqcust">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
@@ -1740,7 +1747,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JmJ-F2-CU7">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" name="BrandAccentColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="Ysx-sd-RKT" kind="relationship" relationship="viewControllers" id="xmM-T1-wb2"/>
@@ -1756,6 +1763,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="9KX-LG-DtS"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" name="BrandAccentColor"/>
     <resources>
         <image name="Builder" width="1100" height="650"/>
         <image name="Image" width="1080" height="1080"/>
@@ -1769,6 +1777,9 @@
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="plumber" width="612" height="408"/>
         <image name="wallpainter" width="1400" height="933"/>
+        <namedColor name="BrandAccentColor">
+            <color red="0.0" green="0.47058823529411764" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

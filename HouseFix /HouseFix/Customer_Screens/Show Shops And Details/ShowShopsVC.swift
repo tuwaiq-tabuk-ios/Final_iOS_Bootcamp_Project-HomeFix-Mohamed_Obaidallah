@@ -128,7 +128,7 @@ extension ShowShopsVC : UICollectionViewDelegate,
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                       sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: collectionView.frame.width ,
+    return CGSize(width: collectionView.frame.height,
                   height: collectionView.frame.height )
   }
   

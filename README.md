@@ -35,3 +35,22 @@ Professionals and clients
    - Authentication with Firebase back-end
    -  support for English and Arabic languages
    - Dark mode
+
+## User stories - Clients
+   - Several sections like electrical, plumber, dyeing and building, for easy browsing.
+
+https://user-images.githubusercontent.com/91871710/151316315-5656525b-8132-4a39-92b2-afab7d513882.mp4
+
+ - Get in contact with a professional explaining the problem and sending photos if necessary.
+   -  He can take pictures, describe them, and include his personal number to communicate with him
+
+https://user-images.githubusercontent.com/91871710/151317068-e7f46b32-72b3-4012-bd4e-d5a0b11127bd.mp4
+
+
+## User stories - Professionals
+
+https://user-images.githubusercontent.com/91871710/151318151-b60db85f-e879-4076-9f4e-2dbd70f1d222.mp4
+
+
+
+
